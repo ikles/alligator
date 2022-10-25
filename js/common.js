@@ -51,7 +51,7 @@ $('.reviews__slider').slick({
   cssEase: 'linear',
   autoplay: false,
   autoplaySpeed: 0,  
-  arrows: false,
+  arrows: true,
   pauseOnHover: true,  
 });
 
@@ -138,6 +138,31 @@ if($('select').length) {
     slideClass: "myClass",
     baseClass: "myclass"
   });
+
+  $(".banner__video").fancybox({
+  openEffect  : 'none',
+  closeEffect : 'none',
+  helpers : {
+    media : {}
+  }
+});
+
+$(".bvideo__w").fancybox({
+  openEffect  : 'none',
+  closeEffect : 'none',
+  helpers : {
+    media : {}
+  }
+});
+
+$(".reviews__slide").fancybox({
+  openEffect  : 'none',
+  closeEffect : 'none',
+  helpers : {
+    media : {}
+  }
+});
+  
 
 }); //ready
 

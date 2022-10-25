@@ -1,44 +1,49 @@
 <?php get_header(); ?>
+<?php
+$post = get_post(594);
+?>
 <div class="top">
   <div class="contain">
     <div class="top__row">
-      <a href="#" class="logo">
+      <a href="<?php get_home_url() ?>" class="logo">
         <img src="<? bloginfo('template_url') ?>/img/logo.svg" class="logo__img" />
         <div class="logo__txt">Производим аэролодки с <b>2010</b> года</div>
       </a>
-      <div class="top__mnu">
-        <ul class="top__mnu-ul">
-          <li><a href="#">Главная</a></li>
-          <li><a href="#">Модели и цены</a></li>
-          <li><a href="#">О компании</a></li>
-          <li><a href="#">Доставка</a></li>
-          <li><a href="#">Тест-драйв</a></li>
-          <li><a href="#">Статьи</a></li>
-          <li><a href="#">Статьи</a></li>
-        </ul>
+      <div class="col-mnu">
+        <div class="hidden-mnu">
+          <a href="#" class="toggle-mnu"><span></span></a>
+        </div>
+        <div class="top__mnu">
+          <?php wp_nav_menu('menu=top-mnu'); ?>
+        </div>
       </div>
       <div class="top__conts">
         <div class="top__socs">
-          <a href="#" class="top__soc"><img src="<? bloginfo('template_url') ?>/img/vkcom.svg" /></a>
-          <a href="#" class="top__soc"><img src="<? bloginfo('template_url') ?>/img/ok.svg" /></a>
-          <a href="#" class="top__soc"><img src="<? bloginfo('template_url') ?>/img/youtube.svg" /></a>
+          <a href="<?php echo get_field('vk'); ?>" class="top__soc"><img src="<? bloginfo('template_url') ?>/img/vkcom.svg" /></a>
+          <a href="<?php echo get_field('ok'); ?>" class="top__soc"><img src="<? bloginfo('template_url') ?>/img/ok.svg" /></a>
+          <a href="<?php echo get_field('youtube'); ?>" class="top__soc"><img src="<? bloginfo('template_url') ?>/img/youtube.svg" /></a>
         </div>
-        <a href="#" class="top__phone">8-800-505-25-04</a>
+        <a href="tel:<?php echo get_field('phone'); ?>" class="top__phone"><?php echo get_field('phone'); ?></a>
       </div>
     </div>
   </div>
 </div>
-<div class="banner">
+<div class="banner" style="background-image: url('<?php echo get_field('banner_bg'); ?>')">
   <div class="contain">
     <div class="banner__row">
       <div class="banner__l">
-        <div class="banner__title">Аэролодка-вездеход от производителя для передвижения по воде, суше, снегу и льду</div>
-        <div class="banner__text">Скачать каталог аэролодок ALLIGATOR</div>
-        <a href="#" class="banner__btn">Скачать</a>
+        <div class="banner__title"><?php echo get_field('banner__title'); ?></div>
+        <div class="banner__text"><?php echo get_field('banner__text'); ?></div>
+        <a href="<?php echo get_field('banner__btn_link'); ?>" class="banner__btn">Скачать</a>
       </div>
       <div class="banner__r">
-        <a href="#" class="banner__video"><img src="<? bloginfo('template_url') ?>/img/banner-vid.jpg" />
+        <a href="<?php echo get_field('banner__video'); ?>" class="banner__video">
+          <img src="<?php echo get_field('banner-vid'); ?>" />
         </a>
+
+
+
+
       </div>
     </div>
   </div>
@@ -46,99 +51,65 @@
 <div class="mproduct">
   <div class="contain">
     <div class="mproduct__items">
-      <div class="mproduct__item">
-        <div class="mproduct__row">
-          <div class="mproduct__l">
-            <div class="mproduct__content">
-              <div class="mproduct__tit">ALLIGATOR RAPTOR X AIR</div>
-              <div class="mproduct__subtit">Гибридная аэролодка с поддувом днища <br> для тех, кому нужен максимум во всем</div>
-              <a href="#" class="mproduct__btn">Смотреть модели</a>
-            </div>
+      <?php
+if ( have_posts() ) : // если имеются записи в блоге.
+  query_posts('cat=4' . '&order=ASC');   // указываем ID рубрик, которые необходимо вывести.
+  
+  while (have_posts()) : the_post();  // запускаем цикл обхода материалов блога
+  ?>
+  <div class="mproduct__item <?php if (get_field('reverse')[0] == 'yes') { ?> mproduct__item--revesre<?php } ?>">
+    <div class="mproduct__row">
+      <div class="mproduct__l">
+        <?php if (get_field('reverse')[0] == 'yes') { ?>
+          <div class="mproduct__content-reverse">
+          <?php } ?>
+          <div class="mproduct__content">
+            <div class="mproduct__tit"><?php the_title(); ?></div>
+            <div class="mproduct__subtit"><?php the_content();?></div>
+            <a href="<?php echo get_field('link'); ?>" class="mproduct__btn">Смотреть модели</a>
           </div>
-          <div class="mproduct__r"><img src="<? bloginfo('template_url') ?>/img/mproduct-1.jpg" class="mproduct__img" /></div>
-        </div>
-        <div class="mproduct__chars">
-          <div class="mproduct__chars-col">
-            <div class="mproduct__chars-title">длина</div>
-            <div class="mproduct__chars-value">6,3-6,8 м</div>
+          <?php if (get_field('reverse')[0] == 'yes') { ?>        
           </div>
-          <div class="mproduct__chars-col">
-            <div class="mproduct__chars-title">мощность</div>
-            <div class="mproduct__chars-value">280-320 л.с.</div>
-          </div>
-          <div class="mproduct__chars-col">
-            <div class="mproduct__chars-title">грузоподъёмность</div>
-            <div class="mproduct__chars-value">до 1600 кг</div>
-          </div>
-          <div class="mproduct__chars-col">
-            <div class="mproduct__chars-title">вместимость</div>
-            <div class="mproduct__chars-value">до 8 чел.</div>
-          </div>
-        </div>
+        <?php } ?>
       </div>
-      <div class="mproduct__item">
-        <div class="mproduct__row">
-          <div class="mproduct__r"><img src="<? bloginfo('template_url') ?>/img/mproduct-2.jpg" class="mproduct__img" /></div>
-          <div class="mproduct__l">
-            <div class="mproduct__content-reverse">
-              <div class="mproduct__tit">ALLIGATOR RAPTOR</div>
-              <div class="mproduct__subtit">Пожалуй, самая популярная аэролодка <br> в своем классе для зимы, лета и межсезонья</div>
-              <a href="#" class="mproduct__btn">Смотреть модели</a>
-            </div>
-          </div>
-        </div>
-        <div class="mproduct__chars">
-          <div class="mproduct__chars-col">
-            <div class="mproduct__chars-title">длина</div>
-            <div class="mproduct__chars-value">5,9-6,3 м</div>
-          </div>
-          <div class="mproduct__chars-col">
-            <div class="mproduct__chars-title">мощность</div>
-            <div class="mproduct__chars-value">200-280 л.с.</div>
-          </div>
-          <div class="mproduct__chars-col">
-            <div class="mproduct__chars-title">грузоподъёмность</div>
-            <div class="mproduct__chars-value">до 1100 кг</div>
-          </div>
-          <div class="mproduct__chars-col">
-            <div class="mproduct__chars-title">вместимость</div>
-            <div class="mproduct__chars-value">до 6 чел.</div>
-          </div>
-        </div>
+      <div class="mproduct__r">
+        <img src="<?php the_post_thumbnail_url('mproduct__img');?>" alt="" class="mproduct__img">        
       </div>
-      <div class="mproduct__item">
-        <div class="mproduct__row">
-          <div class="mproduct__l">
-            <div class="mproduct__content">
-              <div class="mproduct__tit">ALLIGATOR</div>
-              <div class="mproduct__subtit">Быстрая и открытая лодка для лета</div>
-              <a href="#" class="mproduct__btn">Смотреть модели</a>
-            </div>
-          </div>
-          <div class="mproduct__r"><img src="<? bloginfo('template_url') ?>/img/mproduct-3.jpg" class="mproduct__img" /></div>
-        </div>
-        <div class="mproduct__chars">
-          <div class="mproduct__chars-col">
-            <div class="mproduct__chars-title">длина</div>
-            <div class="mproduct__chars-value">5,9-6,3 м</div>
-          </div>
-          <div class="mproduct__chars-col">
-            <div class="mproduct__chars-title">мощность</div>
-            <div class="mproduct__chars-value">130-200 л.с.</div>
-          </div>
-          <div class="mproduct__chars-col">
-            <div class="mproduct__chars-title">грузоподъёмность</div>
-            <div class="mproduct__chars-value">до 900 кг</div>
-          </div>
-          <div class="mproduct__chars-col">
-            <div class="mproduct__chars-title">вместимость</div>
-            <div class="mproduct__chars-value">до 6 чел.</div>
-          </div>
-        </div>
+    </div>
+    <div class="mproduct__chars">
+      <div class="mproduct__chars-col">
+        <div class="mproduct__chars-title">длина</div>
+        <div class="mproduct__chars-value"><?php echo get_field('length'); ?></div>
+      </div>
+      <div class="mproduct__chars-col">
+        <div class="mproduct__chars-title">мощность</div>
+        <div class="mproduct__chars-value"><?php echo get_field('power'); ?></div>
+      </div>
+      <div class="mproduct__chars-col">
+        <div class="mproduct__chars-title">грузоподъёмность</div>
+        <div class="mproduct__chars-value"><?php echo get_field('weight'); ?></div>
+      </div>
+      <div class="mproduct__chars-col">
+        <div class="mproduct__chars-title">вместимость</div>
+        <div class="mproduct__chars-value"><?php echo get_field('peolpes'); ?></div>
       </div>
     </div>
   </div>
+
+  <?php
+  endwhile;  // завершаем цикл.
+endif;
+/* Сбрасываем настройки цикла. Если ниже по коду будет идти еще один цикл, чтобы не было сбоя. */
+wp_reset_query();                
+?>
 </div>
+</div>
+</div>
+
+<?php
+$post = get_post(594);
+?>
+
 <div class="download">
   <div class="contain">
     <div class="download__title">Скачать каталог аэролодок</div>
@@ -148,49 +119,47 @@
 <div class="peculiarities">
   <div class="contain">
     <div class="peculiarities__heading heading">
-      <span>Ключевые особенности</span>
+      <span><?php echo get_field('peculiarities__heading'); ?></span>
     </div>
     <div class="tabs scard-main__tabs">
       <ul class="tabs__content-list">
         <li class="tabs__content-list-item active">
           <div class="tab__img-w">
-            <img src="<? bloginfo('template_url') ?>/img/tab-1.gif" />
+            <img src="<?php echo get_field('tab__img'); ?>" />
           </div>
-          <div class="tab__content-text">Выдерживает прыжки с высоты 2,5 метров и любые пороги</div>
+          <div class="tab__content-text"><?php echo get_field('tab__content-text'); ?></div>
         </li>
         <li class="tabs__content-list-item">
           <div class="tab__img-w">
-            <img src="<? bloginfo('template_url') ?>/img/tab-2.gif" />
+            <img src="<?php echo get_field('tab__img_2'); ?>" />
           </div>
-          <div class="tab__content-text">Комфортно ночевать прямо в лодке</div>
+          <div class="tab__content-text"><?php echo get_field('tab__content-text_2'); ?></div>
         </li>
         <li class="tabs__content-list-item">
           <div class="tab__img-w">
-            <img src="<? bloginfo('template_url') ?>/img/tab-3.gif" />
+            <img src="<?php echo get_field('tab__img_3'); ?>" />
           </div>
-          <div class="tab__content-text">Защищает баллоны при переходе со льда на воду </div>
+          <div class="tab__content-text"><?php echo get_field('tab__content-text_3'); ?></div>
         </li>
         <li class="tabs__content-list-item">
           <div class="tab__img-w">
-            <img src="<? bloginfo('template_url') ?>/img/tab-4.gif" />
+            <img src="<?php echo get_field('tab__img_4'); ?>" />
           </div>
-          <div class="tab__content-text">Сделана из специального материала РЕ500, созданного по нашему 
-          спецзаказу, и не цепляется за камни благодаря 3 точкам крепления</div>
+          <div class="tab__content-text"><?php echo get_field('tab__content-text_4'); ?></div>
         </li>
         <li class="tabs__content-list-item">
           <div class="tab__img-w">
-            <img src="<? bloginfo('template_url') ?>/img/tab-5.gif" />
+            <img src="<?php echo get_field('tab__img_5'); ?>" />
           </div>
-          <div class="tab__content-text">Лодка легкая, ее без особых усилий сдвинет с места 1 человек, 
-          даже если она примерзла</div>
+          <div class="tab__content-text"><?php echo get_field('tab__content-text_5'); ?></div>
         </li>
       </ul>
       <ul class="tabs__list">
-        <li class="tabs__list-item active">Корпус повышенной прочности</li>
-        <li class="tabs__list-item">Просторный салон</li>
-        <li class="tabs__list-item">Всесезонная конструкция конусов баллонов</li>
-        <li class="tabs__list-item">Чешуя служит в 2 раза дольше</li>
-        <li class="tabs__list-item">С погрузкой и разгрузкой лодки справится 1 человек</li>
+        <li class="tabs__list-item active"><?php echo get_field('tabs__list-item_1'); ?></li>        
+        <li class="tabs__list-item"><?php echo get_field('tabs__list-item_2'); ?></li>        
+        <li class="tabs__list-item"><?php echo get_field('tabs__list-item_3'); ?></li>        
+        <li class="tabs__list-item"><?php echo get_field('tabs__list-item_4'); ?></li>        
+        <li class="tabs__list-item"><?php echo get_field('tabs__list-item_5'); ?></li>        
       </ul>
     </div>
   </div>
@@ -198,245 +167,143 @@
 <div class="consult">
   <div class="contain">
     <div class="consult__row">
-      <div class="consult__title">Получить консультацию по подбору аэролодки</div>
-      <a href="#" class="consult__btn">Консультация</a>
+      <div class="consult__title"><?php echo get_field('consult__title'); ?></div>
+      <a href="<?php echo get_field('
+      consult__btn'); ?>" class="consult__btn">Консультация</a>
     </div>
   </div>
 </div>
 <div class="engines">
   <div class="contain">
     <div class="engines__heading heading">
-      <span>Мощные, экономичные и надежные двигатели HONDA</span>
+      <span><?php echo get_field('engines__heading'); ?></span>
     </div>
     <div class="engines__row">
-      <div class="engines__l"><img src="<? bloginfo('template_url') ?>/img/engine.jpg" class="engines__img" /></div>
-      <div class="engines__r">
-        <ul>
-          <li>Идеальны для работы на высоких оборотах</li>
-          <li>Работают вместе с механическим редуктором с шлифованными шестернями и ресурсом <strong>2000 моточасов</strong></li>
-          <li>Настраиваются на заводском компьютере</li>
-          <li>Разгоняют лодку до <strong>140 км/ч</strong></li>
-          <li>
-            Обеспечивают скорость <strong>60 км/ч</strong><br />
-            с грузом <strong>1,5 тонны<strong></strong></strong>
-          </li>
-          <li>Расход топлива <strong>0,5-0,8 л/км</strong></li>
-          <li>До <strong>300 км</strong> дальность хода на одном баке в <strong>150 л</strong>.</li>
-        </ul>
+      <div class="engines__l">
+        <img src="<?php echo get_field('engines__img'); ?>" class="engines__img" /></div>
+        <div class="engines__r">
+          <?php echo get_field('engines__r'); ?>        
+        </div>
       </div>
     </div>
   </div>
-</div>
-<div class="bvideo">
-  <div class="contain">
-    <a href="#" class="bvideo__w"><span class="banner__play"></span><img src="<? bloginfo('template_url') ?>/img/bvideo.jpg" class="bvideo__img" /></a>
-  </div>
-</div>
-
-<div class="attent">
-  <div class="contain">
-    <div class="attent__h heading">
-      <span>Внимание к деталям</span>
+  <div class="bvideo">
+    <div class="contain">
+      <a href="<?php echo get_field('bvideo__link_1'); ?>" class="bvideo__w">
+        <img src="<?php echo get_field('bvideo__img_1'); ?>" class="bvideo__img" />
+      </a>
     </div>
-    <div class="attent__cont">
-      <div class="attent__l">
-        <div class="attent__col-w">
-          <div class="attent__col">
-            <div class="attent__img-w">
-              <img src="<? bloginfo('template_url') ?>/img/attent-1.jpg" class="attent__img" />
-              <div class="attent__txt">Много ниш для хранения</div>
+  </div>
+
+  <div class="attent">
+    <div class="contain">
+      <div class="attent__h heading">
+        <span>Внимание к деталям</span>
+      </div>
+      <div class="attent__cont">
+        <div class="attent__l">
+          <div class="attent__col-w">
+            <div class="attent__col">
+              <div class="attent__img-w">
+                <img src="<?php echo get_field('attent__img_1'); ?>" class="attent__img" />
+                <div class="attent__txt"><?php echo get_field('attent__txt_1'); ?></div>
+              </div>
+              <div class="attent__img-w">
+                <img src="<?php echo get_field('attent__img_2'); ?>" class="attent__img" />
+                <div class="attent__txt"><?php echo get_field('attent__txt_2'); ?></div>
+              </div>
             </div>
-            <div class="attent__img-w">
-              <img src="<? bloginfo('template_url') ?>/img/attent-2.jpg" class="attent__img" />
-              <div class="attent__txt">Понятные приборы, которые под рукой</div>
+            <div class="attent__col">
+              <div class="attent__img-w">
+                <img src="<?php echo get_field('attent__img_3'); ?>" class="attent__img" />
+                <div class="attent__txt"><?php echo get_field('attent__txt_3'); ?></div>
+              </div>
+              <div class="attent__img-w">
+                <img src="<?php echo get_field('attent__img_4'); ?>" class="attent__img" />
+                <div class="attent__txt"><?php echo get_field('attent__txt_4'); ?></div>
+              </div>
             </div>
           </div>
-          <div class="attent__col">
-            <div class="attent__img-w">
-              <img src="<? bloginfo('template_url') ?>/img/attent-3.jpg" class="attent__img" />
-              <div class="attent__txt">Дополнительные отопители</div>
-            </div>
-            <div class="attent__img-w">
-              <img src="<? bloginfo('template_url') ?>/img/attent-4.jpg" class="attent__img" />
-              <div class="attent__txt">Утеплённый быстросъёмный тент</div>
-            </div>
+          <div class="attent__col-dw-row">
+           <div class="attent__img-w">
+            <img src="<?php echo get_field('attent__img_5'); ?>" class="attent__img" />
+            <div class="attent__txt"><?php echo get_field('attent__txt_5'); ?></div>
           </div>
-        </div>
-        <div class="attent__col-dw-row">
           <div class="attent__img-w">
-            <img src="<? bloginfo('template_url') ?>/img/attent-5.jpg" class="attent__img" />
-            <div class="attent__txt">Яркая оптика</div>
-          </div>
-          <div class="attent__img-w">
-            <img src="<? bloginfo('template_url') ?>/img/attent-6.jpg" class="attent__img" />
-            <div class="attent__txt">Перекидные спинки ортопедических кресел</div>
+            <img src="<?php echo get_field('attent__img_6'); ?>" class="attent__img" />
+            <div class="attent__txt"><?php echo get_field('attent__txt_6'); ?></div>
           </div>
         </div>
       </div>
       <div class="attent__r">
-        <div class="attent__img-w">
-          <img src="<? bloginfo('template_url') ?>/img/attent-7.jpg" class="attent__img" />
-          <div class="attent__txt">Антискользящий пол</div>
-        </div>
-        <div class="attent__img-w">
-          <img src="<? bloginfo('template_url') ?>/img/attent-8.jpg" class="attent__img" />
-          <div class="attent__txt">Держатели для удочек</div>
-        </div>
-        <div class="attent__img-w">
-          <img src="<? bloginfo('template_url') ?>/img/attent-9.jpg" class="attent__img" />
-          <div class="attent__txt">Удобное и интуитивное управление</div>
-        </div>
+       <div class="attent__img-w">
+        <img src="<?php echo get_field('attent__img_7'); ?>" class="attent__img" />
+        <div class="attent__txt"><?php echo get_field('attent__txt_7'); ?></div>
+      </div>
+      <div class="attent__img-w">
+        <img src="<?php echo get_field('attent__img_8'); ?>" class="attent__img" />
+        <div class="attent__txt"><?php echo get_field('attent__txt_8'); ?></div>
+      </div>
+      <div class="attent__img-w">
+        <img src="<?php echo get_field('attent__img_9'); ?>" class="attent__img" />
+        <div class="attent__txt"><?php echo get_field('attent__txt_9'); ?></div>
       </div>
     </div>
   </div>
+</div>
 </div>
 
 <div class="testdrive">
   <div class="contain">
     <div class="testdrive__title">
-      Опробуйте аэролодку в деле - <br />
-      запишитесь на БЕСПЛАТНЫЙ тест-драйв
+      <?php echo get_field('testdrive__title'); ?>
     </div>
-    <a href="#" class="testdrive__btn">Записаться</a>
+    <a href="<?php echo get_field('testdrive__btn_link'); ?>" class="testdrive__btn">Записаться</a>
   </div>
 </div>
 
 <div class="ctable">
   <div class="contain">
     <div class="ctable__h heading">
-      <span>Единственный настоящий вездеход</span>
+      <span><?php echo get_field('ctable__h'); ?></span>
     </div>
-
-
-    <table>
-      <thead>
-        <tr class="active">
-          <td></td>
-          <td>Аэролодка ALLIGATOR</td>
-          <td>Вездеход</td>
-          <td>Лодка с водометом</td>
-          <td>Снегоход</td>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Вода</td>
-          <td>+</td>
-          <td>±</td>
-          <td>+</td>
-          <td>-</td>
-        </tr>
-        <tr>
-          <td>Отмели</td>
-          <td>+</td>
-          <td>+</td>
-          <td>+</td>
-          <td>-</td>
-        </tr>
-        <tr>
-          <td>Речные пороги</td>
-          <td>+</td>
-          <td>-</td>
-          <td>+</td>
-          <td>-</td>
-        </tr>
-        <tr>
-          <td>Болота</td>
-          <td>+</td>
-          <td>+</td>
-          <td>-</td>
-          <td>-</td>
-        </tr>
-        <tr>
-          <td>Камыш</td>
-          <td>+</td>
-          <td>+</td>
-          <td>±</td>
-          <td>-</td>
-        </tr>
-        <tr>
-          <td>Лед</td>
-          <td>+</td>
-          <td>+</td>
-          <td>-</td>
-          <td>+</td>
-        </tr>
-        <tr>
-          <td>Снег</td>
-          <td>+</td>
-          <td>+</td>
-          <td>-</td>
-          <td>+</td>
-        </tr>
-        <tr>
-          <td>Шуга</td>
-          <td>+</td>
-          <td>-</td>
-          <td>-</td>
-          <td>-</td>
-        </tr>
-        <tr>
-          <td>Торосы</td>
-          <td>+</td>
-          <td>+</td>
-          <td>+</td>
-          <td>-</td>
-        </tr>
-        <tr>
-          <td>Побережье</td>
-          <td>+</td>
-          <td>+</td>
-          <td>-</td>
-          <td>-</td>
-        </tr>
-        <tr>
-          <td>Поле</td>
-          <td>+</td>
-          <td>+</td>
-          <td>-</td>
-          <td>-</td>
-        </tr>
-        <tr>
-          <td>Любая <br>
-          поверхность</td>
-          <td>+</td>
-          <td>-</td>
-          <td>-</td>
-          <td>-</td>
-        </tr>
-      </tbody>
-    </table>
-
+    <?php echo get_field('ctable__table'); ?>
   </div>
-</div><!--ctable-->
-
-
+</div>
 <div class="production">
   <div class="contain">
     <div class="production__h heading">
-      <span>Производство</span>
+      <span><?php echo get_field('production__h'); ?></span>
     </div>
-    <div class="production__img-w"><img src="<? bloginfo('template_url') ?>/img/production.jpg" class="production__img" /></div>
+    <div class="production__img-w">
+      <img src="<?php echo get_field('production__img'); ?>" class="production__img" />
+    </div>
     <div class="production__items">
       <div class="production__item">
-        <div class="production__icon-w"><img src="<? bloginfo('template_url') ?>/img/production-icon-1.png" /></div>
+        <div class="production__icon-w">
+          <img src="<? bloginfo('template_url') ?>/img/production-icon-1.png" />
+        </div>
         <div class="production__content">
-          <div class="production__advant">2010 г.</div>
-          <div class="production__info">основание завода</div>
+          <div class="production__advant"><?php echo get_field('production__advant_1'); ?></div>
+          <div class="production__info"><?php echo get_field('production__info_1'); ?></div>
         </div>
       </div>
       <div class="production__item">
-        <div class="production__icon-w"><img src="<? bloginfo('template_url') ?>/img/production-icon-2.png" /></div>
+        <div class="production__icon-w">
+          <img src="<? bloginfo('template_url') ?>/img/production-icon-2.png" />
+        </div>
         <div class="production__content">
-          <div class="production__advant">2000 м2</div>
-          <div class="production__info">площадь производства</div>
+          <div class="production__advant"><?php echo get_field('production__advant_2'); ?></div>
+          <div class="production__info"><?php echo get_field('production__info_2'); ?></div>
         </div>
       </div>
       <div class="production__item">
-        <div class="production__icon-w"><img src="<? bloginfo('template_url') ?>/img/production-icon-3.png" /></div>
+        <div class="production__icon-w">
+          <img src="<? bloginfo('template_url') ?>/img/production-icon-3.png" />
+        </div>
         <div class="production__content">
-          <div class="production__advant">более 600</div>
-          <div class="production__info">аэролодок выпущено</div>
+          <div class="production__advant"><?php echo get_field('production__advant_3'); ?></div>
+          <div class="production__info"><?php echo get_field('production__info_3'); ?></div>
         </div>
       </div>
     </div>
@@ -444,132 +311,171 @@
 </div>
 <div class="bvideo bvideo-2">
   <div class="contain">
-    <a href="#" class="bvideo__w"><span class="banner__play"></span><img src="<? bloginfo('template_url') ?>/img/bvideo-2.jpg" class="bvideo__img" /></a>
-  </div>
-</div>
-<div class="consult">
-  <div class="contain">
-    <div class="consult__row">
-      <div class="consult__title">Получить консультацию по подбору аэролодки</div>
-      <a href="#" class="consult__btn">Консультация</a>
+    <a href="<?php echo get_field('bvideo__link_2'); ?>" class="bvideo__w">        
+      <img src="<?php echo get_field('bvideo__img_2'); ?>" class="bvideo__img" /></a>
     </div>
   </div>
-</div>
-
-<div class="our-boats">
-  <div class="contain">
-    <div class="our-boats__h heading">
-      <span>Наши лодки - фото от владельцев</span>
-    </div>
-    <div class="our-boats__row">
-      <div class="our-boats__col">
-        <a data-fancybox="gallery-1" href="<? bloginfo('template_url') ?>/img/our-boats-1.jpg" class="our-boats__img-w _big">
-          <img src="<? bloginfo('template_url') ?>/img/our-boats-1.jpg" class="our-boats__img" />
-        </a>
-        <a data-fancybox="gallery-1" href="<? bloginfo('template_url') ?>/img/our-boats-2.jpg" class="our-boats__img-w">
-          <img src="<? bloginfo('template_url') ?>/img/our-boats-2.jpg" class="our-boats__img" />
-        </a>
-      </div>
-      <div class="our-boats__col">
-        <a data-fancybox="gallery-1" href="<? bloginfo('template_url') ?>/img/our-boats-3.jpg" class="our-boats__img-w">
-          <img src="<? bloginfo('template_url') ?>/img/our-boats-3.jpg" class="our-boats__img" />
-        </a>
-        <a data-fancybox="gallery-1" href="<? bloginfo('template_url') ?>/img/our-boats-4.jpg" class="our-boats__img-w _big">
-          <img src="<? bloginfo('template_url') ?>/img/our-boats-4.jpg" class="our-boats__img" />
-        </a>
-      </div>
-      <div class="our-boats__col">
-        <a data-fancybox="gallery-1" href="<? bloginfo('template_url') ?>/img/our-boats-5.jpg" class="our-boats__img-w _big">
-          <img src="<? bloginfo('template_url') ?>/img/our-boats-5.jpg" class="our-boats__img" />
-        </a>
-        <a data-fancybox="gallery-1" href="<? bloginfo('template_url') ?>/img/our-boats-6.jpg" class="our-boats__img-w">
-          <img src="<? bloginfo('template_url') ?>/img/our-boats-6.jpg" class="our-boats__img" />
-        </a>
+  <div class="consult">
+    <div class="contain">
+      <div class="consult__row">
+        <div class="consult__title"><?php echo get_field('consult__title'); ?></div>
+        <a href="<?php echo get_field('
+        consult__btn'); ?>" class="consult__btn">Консультация</a>
       </div>
     </div>
   </div>
-</div>
 
-<div class="reviews">
-  <div class="contain">
-    <div class="reviews__h heading">
-      <span>Отзывы</span>
-    </div>
-    <div class="reviews__slider">
-      <a href="#" class="reviews__slide">
-        <img src="<? bloginfo('template_url') ?>/img/rev-1.jpg" />
-      </a>
-      <a href="#" class="reviews__slide">
-        <img src="<? bloginfo('template_url') ?>/img/rev-2.jpg" />
-      </a>
-      <a href="#" class="reviews__slide">
-        <img src="<? bloginfo('template_url') ?>/img/rev-3.jpg" />
-      </a>            
-      <a href="#" class="reviews__slide">
-        <img src="<? bloginfo('template_url') ?>/img/rev-2.jpg" />
-      </a>
-    </div>
-  </div>
-</div>
-
-<div class="family">
-  <div class="contain">
-    <div class="family__h heading">
-      <span>Семейное дело с душой из сердца Сибири</span>
-    </div>
-    <div class="family__img-w"><img src="<? bloginfo('template_url') ?>/img/family.jpg" class="family__img" /></div>
-    <div class="family__row">
-      <div class="family__l">
-        <div class="family__bloqu">
-          <p>В 2008 году, я купил себе первую аэролодку. Начал её активно использовать, ездить на рыбалку и охоту, и, вскоре, столкнулся с рядом проблем: травили баллоны, двигатель забарахлил, лопнула сварка и т.д. Сначала звонил
-          производителю, но после того как они перестали отвечать мне, я начал работу над улучшением лодки самостоятельно. Я объездил более 10 производителей аэролодоки СВП. Полностью изучив всю технологию я воодушевился на
-          создание собственной аэролодки. Занимался этим в качестве хобби и делал аэролодки для себя и друзей.</p>
-           <p>В 2013 году я принял решение расширять производство. На текущий момент мы произвели более 350 аэролодок. И моей
-          главной задачей является увеличение объемов производства без потери внимания к качеству.</p>
-            <p>Мы всегда делаем лодки “как для себя” и сопровождаем наших заказчиков на протяжении всего срока эксплуатации лодки.</p>
-        <div class="family__name">Крантов Александр Петрович</div>
+  <div class="our-boats">
+    <div class="contain">
+      <div class="our-boats__h heading">
+        <span><?php echo get_field('our-boats__h'); ?></span>
+      </div>
+      <div class="our-boats__row">
+        <div class="our-boats__col">
+          <a data-fancybox="gallery-1" href="<?php echo get_field('our_boats_1'); ?>" class="our-boats__img-w">
+            <img src="<?php echo get_field('our_boats_1'); ?>" class="our-boats__img" />
+          </a>
+          <a data-fancybox="gallery-1" href="<?php echo get_field('our_boats_2'); ?>" class="our-boats__img-w">
+            <img src="<?php echo get_field('our_boats_2'); ?>" class="our-boats__img" />
+          </a>
+        </div>
+        <div class="our-boats__col">
+          <a data-fancybox="gallery-1" href="<?php echo get_field('our_boats_3'); ?>" class="our-boats__img-w">
+            <img src="<?php echo get_field('our_boats_3'); ?>" class="our-boats__img" />
+          </a>
+          <a data-fancybox="gallery-1" href="<?php echo get_field('our_boats_4'); ?>" class="our-boats__img-w">
+            <img src="<?php echo get_field('our_boats_4'); ?>" class="our-boats__img" />
+          </a>
+        </div>
+        <div class="our-boats__col">
+          <a data-fancybox="gallery-1" href="<?php echo get_field('our_boats_5'); ?>" class="our-boats__img-w">
+            <img src="<?php echo get_field('our_boats_5'); ?>" class="our-boats__img" />
+          </a>
+          <a data-fancybox="gallery-1" href="<?php echo get_field('our_boats_6'); ?>" class="our-boats__img-w">
+            <img src="<?php echo get_field('our_boats_6'); ?>" class="our-boats__img" />
+          </a>
         </div>
       </div>
-      <div class="family__r">
-        <div class="family__person-1">
-          <div class="person__left">
-            <div class="person__name">Крантов Александр Петрович</div>
-            <div class="person__func">Основатель компании "Аллигатор"</div>
+    </div>
+  </div>
+
+  <div class="reviews">
+    <div class="contain">
+      <div class="reviews__h heading">
+        <span><?php echo get_field('reviews__h'); ?></span>
+      </div>
+      <div class="reviews__slider">
+        <a href="<?php echo get_field('rev_link_1'); ?>" class="reviews__slide">
+          <img src="<?php echo get_field('rev_1'); ?>" />
+        </a>
+        <a href="<?php echo get_field('rev_link_2'); ?>" class="reviews__slide">
+          <img src="<?php echo get_field('rev_2'); ?>" />
+        </a>
+        <a href="<?php echo get_field('rev_link_3'); ?>" class="reviews__slide">
+          <img src="<?php echo get_field('rev_3'); ?>" />
+        </a>
+        <a href="<?php echo get_field('rev_link_4'); ?>" class="reviews__slide">
+          <img src="<?php echo get_field('rev_4'); ?>" />
+        </a>
+
+        <?php if (get_field('rev_link_5') != ''): ?>
+          <a href="<?php echo get_field('rev_link_5'); ?>" class="reviews__slide">
+            <img src="<?php echo get_field('rev_5'); ?>" />
+          </a>
+        <?php endif; ?>
+
+        <?php if (get_field('rev_link_6') != ''): ?>
+          <a href="<?php echo get_field('rev_link_6'); ?>" class="reviews__slide">
+            <img src="<?php echo get_field('rev_6'); ?>" />
+          </a>
+        <?php endif; ?>
+
+        <?php if (get_field('rev_link_7') != ''): ?>
+          <a href="<?php echo get_field('rev_link_7'); ?>" class="reviews__slide">
+            <img src="<?php echo get_field('rev_7'); ?>" />
+          </a>
+        <?php endif; ?>
+
+        <?php if (get_field('rev_link_8') != ''): ?>
+          <a href="<?php echo get_field('rev_link_8'); ?>" class="reviews__slide">
+            <img src="<?php echo get_field('rev_8'); ?>" />
+          </a>
+        <?php endif; ?>
+
+        <?php if (get_field('rev_link_9') != ''): ?>
+          <a href="<?php echo get_field('rev_link_9'); ?>" class="reviews__slide">
+            <img src="<?php echo get_field('rev_9'); ?>" />
+          </a>
+        <?php endif; ?>
+
+        <?php if (get_field('rev_link_10') != ''): ?>
+          <a href="<?php echo get_field('rev_link_10'); ?>" class="reviews__slide">
+            <img src="<?php echo get_field('rev_10'); ?>" />
+          </a>
+        <?php endif; ?>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="family">
+    <div class="contain">
+      <div class="family__h heading">
+        <span><?php echo get_field('family__h'); ?></span>
+      </div>
+      <div class="family__img-w">
+        <img src="<?php echo get_field('family__img'); ?>" class="family__img" />
+      </div>
+      <div class="family__row">
+        <div class="family__l">
+          <div class="family__bloqu">
+            <?php echo get_field('family__bloqu'); ?>
+            
+            <div class="family__name"><?php echo get_field('family__name'); ?></div>
           </div>
-          <div class="person__img"><img src="<? bloginfo('template_url') ?>/img/person-1.jpg" /></div>
         </div>
-        <div class="family__person-2">
-          <div class="person__img"><img src="<? bloginfo('template_url') ?>/img/person-2.jpg" /></div>
-          <div class="person__right">
-            <div class="person__name">Крантов Александр Александрович</div>
-            <div class="person__func">Занимается развитием и продвижением компании</div>
+        <div class="family__r">
+          <div class="family__person-1">
+            <div class="person__left">
+              <div class="person__name"><?php echo get_field('person__name_1'); ?></div>
+              <div class="person__func"><?php echo get_field('person__func_1'); ?></div>
+            </div>
+            <div class="person__img">
+              <img src="<?php echo get_field('person__img_1'); ?>" /></div>
+          </div>
+          <div class="family__person-2">
+             <div class="person__img">
+              <img src="<?php echo get_field('person__img_2'); ?>" /></div>
+            <div class="person__right">
+                 <div class="person__name"><?php echo get_field('person__name_2'); ?></div>
+              <div class="person__func"><?php echo get_field('person__func_2'); ?></div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<div class="trust">
-  <div class="contain">
-    <div class="trust__h heading">
-      <span>Нам доверяют</span>
+  <div class="trust">
+    <div class="contain">
+      <div class="trust__h heading">
+        <span>Нам доверяют</span>
+      </div>
+      <div class="trust__row">
+        <div class="trust__logo"><img src="<? bloginfo('template_url') ?>/img/trust-logo-1.png" /></div>
+        <div class="trust__logo"><img src="<? bloginfo('template_url') ?>/img/trust-logo-2.png" /></div>
+        <div class="trust__logo"><img src="<? bloginfo('template_url') ?>/img/trust-logo-3.png" /></div>
+        <div class="trust__logo"><img src="<? bloginfo('template_url') ?>/img/trust-logo-4.png" /></div>
+        <div class="trust__logo"><img src="<? bloginfo('template_url') ?>/img/trust-logo-5.png" /></div>
+      </div>
     </div>
-    <div class="trust__row">
-      <div class="trust__logo"><img src="<? bloginfo('template_url') ?>/img/trust-logo-1.png" /></div>
-      <div class="trust__logo"><img src="<? bloginfo('template_url') ?>/img/trust-logo-2.png" /></div>
-      <div class="trust__logo"><img src="<? bloginfo('template_url') ?>/img/trust-logo-3.png" /></div>
-      <div class="trust__logo"><img src="<? bloginfo('template_url') ?>/img/trust-logo-4.png" /></div>
-      <div class="trust__logo"><img src="<? bloginfo('template_url') ?>/img/trust-logo-5.png" /></div>
+  </div>
+  <div class="download-2">
+    <div class="contain">
+      <div class="download__content">
+        <div class="download__title">Скачать каталог <br> аэролодок</div>
+        <a href="#" class="download__btn">Скачать каталог</a>
+        <img class="catalog__min-img" src="<? bloginfo('template_url') ?>/img/catalog-min.png" alt="">
+      </div>
     </div>
   </div>
-</div>
-<div class="download-2">
-  <div class="contain">
-    <div class="download__content">
-    <div class="download__title">Скачать каталог <br> аэролодок</div>
-    <a href="#" class="download__btn">Скачать каталог</a>
-    <img class="catalog__min-img" src="<? bloginfo('template_url') ?>/img/catalog-min.png" alt="">
-  </div>
-  </div>
-</div>
-<?php get_footer(); ?>
+  <?php get_footer(); ?>

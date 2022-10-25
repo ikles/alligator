@@ -398,7 +398,12 @@ body {
 }
 
 .mproduct__item {
-  margin-bottom: 40px;
+  margin-bottom: 40px;   
+}
+.mproduct__item--revesre {
+  .mproduct__r {
+      order: -1
+    }
 }
 
 .mproduct__row {
@@ -614,7 +619,7 @@ body {
 }
 
 .tab__content-text {
-  font-size: 20px;
+  font-size: 19px;
   line-height: 1.1;
   color: rgb(0, 0, 0);
 }
@@ -744,18 +749,7 @@ li {
   display: flex;  
           align-items: center;
           justify-content: center;
-  &:before {
-  content: "";  
-  background: url("../img/play.svg") $nr left calc(50% + 4px) center;  
-          background-size: 43px;
-  background-color: #E0E0E0;  
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
-  display: block;
-  position: absolute;
-  z-index: 2;
-}
+
 }
 
 .bvideo-2 {
@@ -769,6 +763,18 @@ li {
   position: relative;
   align-items: center;
   justify-content: center;
+    &:before {
+  content: "";  
+  background: url("../img/play.svg") $nr left calc(50% + 4px) center;  
+          background-size: 43px;
+  background-color: #E0E0E0;  
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  display: block;
+  position: absolute;
+  z-index: 2;
+}
 }
 
 .bvideo__img {
@@ -1039,9 +1045,9 @@ img {
   color: rgb(0, 0, 0);  
   padding-top: 46px;
   padding-left: 48px;
-  background-image: url("../img/bloqu-1.png");
-  background-repeat: no-repeat;
-  background-position: left top;
+  background:
+  url("../img/bloqu-1.png") no-repeat left top,
+  url("../img/bloqu-2.png") no-repeat right 13px bottom 52px;
   p {
     &:not(:last-child) {
       margin-bottom: 23px;
@@ -1147,6 +1153,7 @@ img {
   border-radius: 10px;
   position: relative;
   margin-bottom: 15px;
+  overflow: hidden;
 }
 
 .attent__img {
@@ -1201,6 +1208,27 @@ img {
 .our-boats__col {
   width: 33.333%;
   padding: 0 7px;
+  &:nth-child(1) {
+    .our-boats__img-w {
+      &:nth-child(1) {
+        height: 420px;
+      }  
+    }        
+  }
+  &:nth-child(2) {
+     .our-boats__img-w {
+      &:nth-child(2) {
+        height: 420px;
+      }  
+    } 
+  }  
+  &:nth-child(3) {
+ .our-boats__img-w {
+      &:nth-child(1) {
+        height: 420px;
+      }  
+    } 
+  }  
 }
 
 .our-boats__img-w {  
@@ -1264,7 +1292,22 @@ img {
   .slick-list {
     padding: 15px 0;
   }
-  
+  .slick-arrow {
+    position: absolute;
+    width: 56px;
+    height: 200px;
+    border-radius: 10px;
+font-size: 0;
+bottom: 15px;
+background: #3E3E3E url("../img/arr-yell-l.svg") $nr center;
+  }
+  .slick-prev {
+    left: 0;
+  }
+  .slick-next {
+    right: 0;
+    transform: rotate(180deg);
+  }
 }
 
 
