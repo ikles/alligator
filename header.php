@@ -29,3 +29,33 @@
 <body <?php body_class(); ?>>	
 	<?php wp_reset_postdata(); ?>
 	<div class="wrapper">
+<?php
+$post = get_post(594);
+?>
+<div class="top">
+  <div class="contain">
+    <div class="top__row">
+      <a href="<?php get_home_url() ?>" class="logo">
+        <img src="<? bloginfo('template_url') ?>/img/logo.svg" class="logo__img" />
+        <div class="logo__txt">Производим аэролодки с <b>2010</b> года</div>
+      </a>
+      <div class="col-mnu">
+        <div class="hidden-mnu">
+          <a href="#" class="toggle-mnu"><span></span></a>
+        </div>
+        <div class="top__mnu">
+<span class="open-mnu-close"></span>
+          <?php wp_nav_menu('menu=top_menu'); ?>
+        </div>
+      </div>
+      <div class="top__conts">
+        <div class="top__socs">
+          <a href="<?php echo get_field('vk'); ?>" class="top__soc"><img src="<? bloginfo('template_url') ?>/img/vkcom.svg" /></a>
+          <a href="<?php echo get_field('ok'); ?>" class="top__soc"><img src="<? bloginfo('template_url') ?>/img/ok.svg" /></a>
+          <a href="<?php echo get_field('youtube'); ?>" class="top__soc"><img src="<? bloginfo('template_url') ?>/img/youtube.svg" /></a>
+        </div>
+        <a href="tel:<?php echo get_field('phone'); ?>" class="top__phone"><?php echo get_field('phone'); ?></a>
+      </div>
+    </div>
+  </div>
+</div>

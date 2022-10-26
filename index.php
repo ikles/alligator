@@ -1,33 +1,5 @@
 <?php get_header(); ?>
-<?php
-$post = get_post(594);
-?>
-<div class="top">
-  <div class="contain">
-    <div class="top__row">
-      <a href="<?php get_home_url() ?>" class="logo">
-        <img src="<? bloginfo('template_url') ?>/img/logo.svg" class="logo__img" />
-        <div class="logo__txt">Производим аэролодки с <b>2010</b> года</div>
-      </a>
-      <div class="col-mnu">
-        <div class="hidden-mnu">
-          <a href="#" class="toggle-mnu"><span></span></a>
-        </div>
-        <div class="top__mnu">
-          <?php wp_nav_menu('menu=top-mnu'); ?>
-        </div>
-      </div>
-      <div class="top__conts">
-        <div class="top__socs">
-          <a href="<?php echo get_field('vk'); ?>" class="top__soc"><img src="<? bloginfo('template_url') ?>/img/vkcom.svg" /></a>
-          <a href="<?php echo get_field('ok'); ?>" class="top__soc"><img src="<? bloginfo('template_url') ?>/img/ok.svg" /></a>
-          <a href="<?php echo get_field('youtube'); ?>" class="top__soc"><img src="<? bloginfo('template_url') ?>/img/youtube.svg" /></a>
-        </div>
-        <a href="tel:<?php echo get_field('phone'); ?>" class="top__phone"><?php echo get_field('phone'); ?></a>
-      </div>
-    </div>
-  </div>
-</div>
+
 <div class="banner" style="background-image: url('<?php echo get_field('banner_bg'); ?>')">
   <div class="contain">
     <div class="banner__row">
@@ -458,22 +430,22 @@ $post = get_post(594);
   <div class="trust">
     <div class="contain">
       <div class="trust__h heading">
-        <span>Нам доверяют</span>
+        <span><?php echo get_field('trust__h'); ?></span>
       </div>
       <div class="trust__row">
-        <div class="trust__logo"><img src="<? bloginfo('template_url') ?>/img/trust-logo-1.png" /></div>
-        <div class="trust__logo"><img src="<? bloginfo('template_url') ?>/img/trust-logo-2.png" /></div>
-        <div class="trust__logo"><img src="<? bloginfo('template_url') ?>/img/trust-logo-3.png" /></div>
-        <div class="trust__logo"><img src="<? bloginfo('template_url') ?>/img/trust-logo-4.png" /></div>
-        <div class="trust__logo"><img src="<? bloginfo('template_url') ?>/img/trust-logo-5.png" /></div>
+        <div class="trust__logo"><img src="<?php echo get_field('trust__logo_1'); ?>" alt=""></div>
+        <div class="trust__logo"><img src="<?php echo get_field('trust__logo_2'); ?>" alt=""></div>
+        <div class="trust__logo"><img src="<?php echo get_field('trust__logo_3'); ?>" alt=""></div>
+        <div class="trust__logo"><img src="<?php echo get_field('trust__logo_4'); ?>" alt=""></div>
+        <div class="trust__logo"><img src="<?php echo get_field('trust__logo_5'); ?>" alt=""></div>        
       </div>
     </div>
   </div>
   <div class="download-2">
     <div class="contain">
       <div class="download__content">
-        <div class="download__title">Скачать каталог <br> аэролодок</div>
-        <a href="#" class="download__btn">Скачать каталог</a>
+        <div class="download__title"><?php echo get_field('download__title'); ?></div>
+        <a href="<?php echo get_field('download__btn_2'); ?>" class="download__btn">Скачать каталог</a>
         <img class="catalog__min-img" src="<? bloginfo('template_url') ?>/img/catalog-min.png" alt="">
       </div>
     </div>
