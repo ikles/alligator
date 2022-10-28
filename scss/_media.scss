@@ -152,6 +152,187 @@
   height: 608px;
 }
 
+.mproduct__r {
+  width: 60%;
+  img {
+     max-width: 100%; 
+    }
+}
+.mproduct__l {
+  padding: 20px 0;
+}
+.mproduct__item--revesre {
+  .mproduct__r {
+    
+  }
+}
+
+.mproduct__tit {
+  font-size: 36px;
+}
+.mproduct__subtit {
+  font-size: 18px;
+}
+.mproduct__btn {
+  margin-top: 25px;
+}
+
+*[class$='__btn'] {
+  font-size: 17px;
+}
+
+.mproduct__item {
+  margin-bottom: 30px;
+}
+
+.mproduct__chars-title {
+  font-size: 20px;
+}
+.mproduct__chars-value {
+  font-size: 22px;
+}
+
+.mproduct {
+  margin-bottom: 0;
+}
+.peculiarities {
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+.tab__img-w {
+  height: auto;
+}
+.tabs__list-item {
+  font-size: 18px;
+  line-height: 1.2;
+}
+.consult {
+  margin: 20px 0 10px 0;
+}
+.heading {
+  font-size: 36px;
+}
+.engines__l {
+  width: 50%;
+}
+.engines__r ul li {
+  font-size: 17px;
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+.bvideo {
+  padding-bottom: 60px;
+}
+.attent__cont {  
+          flex-wrap: wrap;
+}
+.attent__l {
+  
+}
+
+.attent__img-w {
+  margin-bottom: 10px;
+}
+
+.attent__r {
+    display: flex;    
+            justify-content: space-between;
+  .attent__img-w {
+    height: 200px;
+    width: calc(33.333% - 5px);
+  }  
+}
+
+.attent__col-dw-row {
+  .attent__img-w {
+  width: calc(50% - 5px);
+  height: 300px;
+  }
+}
+
+.attent__r,
+.attent__l {
+  width: 100%;
+}
+.attent__l {
+  margin-right: 0;
+}
+.attent__col {
+  width: calc(50% - 5px);
+}
+.attent__txt {
+  font-size: 16px;
+}
+.testdrive {
+  margin-top: 35px;
+}
+.ctable {
+  padding-top: 60px;
+}
+table {
+thead {
+  td {  
+    font-size: 16px;
+    height: 61px;  
+    &:nth-child(2) {
+      font-size: 16px;
+    }
+}
+} 
+tbody {
+td {
+  &:first-child {
+  font-size: 16px;
+}
+}
+  
+}  
+}
+
+.production {
+  padding-top: 60px;
+}
+.production__advant {
+  font-size: 32px;
+}
+.production__info {
+  font-size: 16px;
+}
+.bvideo-2 {
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+.reviews {
+  padding-top: 45px;
+  padding-bottom: 15px;
+}
+.reviews__slider .slick-arrow,
+.reviews__slide {
+  height: 170px;
+}
+.family__name,
+.family__bloqu {
+  font-size: 17px;
+}
+.person__img {
+  width: 180px;
+  height: 180px;
+}
+.person__left {
+  padding-left: 20px;
+}
+.trust {
+  padding-top: 10px;
+  padding-bottom: 40px;
+}
+.trust__logo {
+  width: 20%;
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
 }//1199
 
 
@@ -160,31 +341,407 @@
   .contain {
     max-width: 750px 
   }    
-} 
+  .banner__row {    
+            flex-wrap: wrap;
+  }
+  .banner__title {
+    text-align: left;
+  }
+  .banner__l {    
+            align-items: flex-start;
+  }
+  .banner__r {
+    margin-left: 0;
+    margin-top: 25px;
+  }
+  .banner {
+    height: auto;
+    padding: 25px 0;
+  }
+  .mproduct__l {
+    position: static;
+    width: 100%;
+  }
+  .mproduct__content-reverse,
+  .mproduct__content {
+    position: static;
+  }
+  .mproduct__r {
+    overflow: hidden;
+    width: 50%;
+    order: -1;
+    margin-left: auto;
+    img {
+      max-width: unset;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .mproduct__items {
+    width: 100%;
+  }
+  .mproduct__item {
+    display: flex;
+    border: 1px solid rgba(#3E3E3E, 0.2);
+    width: 100%;
+    overflow: hidden;
+            border-radius: 11px;
+  } 
+  .mproduct__row {    
+            flex-wrap: wrap;
+            width: 70%;
+                  flex: none;
+                          justify-content: flex-start;                          
+                                  align-items: flex-start;
+                                  padding: 20px 20px 0 20px;
+  }
+  .mproduct__chars-col {
+    border-bottom-style: solid;
+    border-right-style: none;  
+    padding: 10px 10px;  
+    &:last-child {
+      border: none;
+    }
+  }   
+  .mproduct__chars {    
+            flex-direction: column;
+            width: 30%;            
+                    border-radius: 0;
+            
+  }
+  .mproduct__r {    
+  transform: scale(-1, 1);
+  margin-left: unset;
+  width: unset;
+  img {
+    height: 160px;
+  }
+  }
+  .mproduct__item--revesre {
+    
+    .mproduct__r {
+    transform: scale(1, 1)
+  }
+  } 
+.mproduct__content-reverse {
+  text-align: left;
+}
+.consult__row {
+  padding: 0;
+}
+.heading {
+  font-size: 33px;
+}
+.engines__row {  
+          flex-wrap: wrap;
+}
+.engines__l,
+.engines__r {
+  width: 100%;
+  margin-right: 0;
+  padding-left: 0;
+}
+.engines__l {
+  height: 200px;
+  min-width: 300px;
+}
+.attent__txt {
+  height: auto;
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+.testdrive {
+  padding: 50px 0;
+}
+.testdrive__title {
+  max-width: 500px;
+  br {
+    display: none;
+  }
+}
+.consult__title {
+  font-size: 24px;
+}
+.our-boats__h {
+  margin-bottom: 20px;
+}
+.our-boats__col:nth-child(3) .our-boats__img-w:nth-child(1),
+.our-boats__col:nth-child(1) .our-boats__img-w:nth-child(1),
+.our-boats__col:nth-child(2) .our-boats__img-w:nth-child(2) {
+  height: 350px;
+}
+.reviews__slider .slick-arrow, .reviews__slide {
+  height: 110px;
+}
+.family__r {  
+  width: 100%;
+  margin-right: 0;
+  margin-top: 25px;
+}
+.family__l {
+  margin-right: 0;
+  width: 100%;
+}
+.family__row {  
+          flex-wrap: wrap;
+}
+.download-2 {
+  padding: 70px 0;
+}
+.catalog__min-img {
+  bottom: -34px;
+}
+} //991
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 767px) {
   .contain {
     max-width: 600px;
   }
-}      
+  .banner {
+    padding-bottom: 30px;
+  }
+  .bvideo__w:before,
+  .banner__video:before {
+    width: 55px;
+    height: 55px;    
+            background-size: 20px;
+  }
+  .banner__r {
+    width: 100%;
+    max-width: 380px;
+  }
+  .banner__title {
+    br {
+      display: none;
+    }
+  }
+  .banner__title {
+    font-size: 33px;
+  }
+  .mproduct__content-reverse,
+  .mproduct__content {
+    width: 100%;
+  }
+  .mproduct {
+    padding-top: 40px;
+  }
+  .mproduct__chars-col {
+    display: flex;    
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+  }
+  .mproduct__chars-title
+   {
+    font-size: 17px;
+  }
+  .mproduct__chars-value {
+    font-size: 20px;
+  }
+  .scard-main__tabs {   
+            flex-wrap: wrap; 
+  }
+  .tabs__content-list {
+    margin-right: 0;
+    margin-top: 25px;
+    width: 100%;
+  }
+  .attent__txt {
+    padding: 7px;
+    font-size: 15px;
+    line-height: 1.2;
+  }
+  .tabs__list {
+    order: -1;
+    border-right: solid 1px #ececec;
+  }
+  .tabs__list-item {    
+    &:first-child {
+      border-top: 1px solid #ececec;
+    }    
+  }
+table tbody td:first-child {
+  min-width: 150px;
+}
+.production__advant {
+  font-size: 21px;
+}
+.production__info {
+  font-size: 15px;
+}
+.our-boats__col:nth-child(3) .our-boats__img-w:nth-child(1), .our-boats__col:nth-child(1) .our-boats__img-w:nth-child(1), .our-boats__col:nth-child(2) .our-boats__img-w:nth-child(2) {
+  height: 240px;
+}
+.our-boats__col {
+  padding: 0 5px;
+}
+.our-boats__img-w {
+  margin-bottom: 10px;
+}
+.reviews__slider .slick-arrow, .reviews__slide {
+  height: 122px;
+}
+.family__bloqu {
+  padding: 30px 0 0 30px;
+  background: 
+  url("../img/bloqu-1.png") no-repeat left top,
+  url("../img/bloqu-2.png") no-repeat right 13px bottom 52px;  
+  background-size: 40px;
+}
+.footer__col-1 {
+  margin-right: unset;
+}
+.footer__top {  
+          justify-content: space-between;
+}
+.footer__bot {  
+          justify-content: space-between;          
+                  flex-wrap: wrap;
+}
+.footer__bot-col-1 {
+  width: 100%;
+}
+.bot__inf {
+  width: 50%;
+  margin-top: 25px;
+  
+}
+.footer__bot-col-1 {
+  display: flex;
+          justify-content: space-between;
+          
+  p {
+  
+  
+}
+} 
+.footer__col-soc-row {  
+          justify-content: flex-start;
+}
+.footer__col-soc-item {
+  margin-left: 0;
+  margin-right: 10px;
+}
+} //767     
 
 @media only screen and (max-width : 640px) {
   .contain {
     max-width: 530px;
   }
-} 
+  .banner__l {
+    display: block;
+    text-align: center;
+  }
+  .banner__title,
+  .banner__text {
+    text-align: center;
+  }
+  .banner__r {
+    margin-left: auto;
+      margin-right: auto;
+  }
+  .mproduct__item {    
+            flex-direction: column;
+            
+  }
+  .mproduct__chars {
+    width: 100%;
+  }
+  .mproduct__row {
+    
+  }
+  .ctable__content {    
+        overflow-x: auto;
+        table {
+          width: 700px;
+        }
+  }
+  .production__item {    
+            flex-direction: column;
+            text-align: center;            
+                    align-items: center;
+  }
+  .our-boats {
+    padding-top: 22px;
+  }
+  .reviews__slider {
+    padding: 0 61px;
+  }
+} //640
 
 
 
-@media only screen and (max-width : 570px) {
+@media only screen and (max-width : 575px) {
   .contain {
     width: 100%;
     max-width: 100%;
     padding-left: 15px;
     padding-right: 15px;
   }
-}
+  .mproduct__chars-title {
+    margin-bottom: 5px;
+  }
+  .mproduct__tit {
+    font-size: 30px;
+  }
+  .download {
+    padding: 50px 0;
+  }
+  .consult__row {    
+            flex-wrap: wrap;
+                    justify-content: center;
+  }
+  .consult__title {
+    margin-right: 0;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  .heading {
+    font-size: 29px;
+  }
+  .testdrive__title {
+    margin-bottom: 0;
+    font-size: 28px;
+  }
+  .download__title {
+    font-size: 28px;
+  }
+  .our-boats__img-w {
+    height: 150px;
+  }
+  .our-boats__col:nth-child(3) .our-boats__img-w:nth-child(1), .our-boats__col:nth-child(1) .our-boats__img-w:nth-child(1), .our-boats__col:nth-child(2) .our-boats__img-w:nth-child(2) {
+    height: 210px;
+  }
+  .family {
+    padding-top: 20px;
+  }
+  .catalog__min-img {
+    width: 220px;
+    bottom: -4px;
+  }
+  .footer__col-3 {
+    display: none;
+  }
+  .footer__mnu-tittle {
+    font-size: 17px;
+    margin-bottom: 15px;
+  }
+  .footer__top {
+    margin-bottom: 35px;
+  }
+  .footer__bot {
+
+            justify-content: center;
+  }
+  .bot__inf {
+    text-align: center;
+  }
+  .copy {
+    white-space: nowrap;
+  }
+}//575
 
 
 
@@ -192,11 +749,139 @@
     .top__mnu {
     padding-left: 30px;
   }
+  .top__conts {    
+    margin-top: 10px;
+            flex-wrap: wrap;            
+                    align-items: center;                    
+                            justify-content: space-between;
+   width: 100%; 
+   order: 10;
+   display: flex;
+  }
+  .top__row {    
+            flex-wrap: wrap;
+  }
+  .top__socs {
+  }
+  .banner__title {
+    font-size: 30px;
+  }
+  .mproduct__r img {
+    max-width: 100%;
+    height: auto;
+  }
+  .mproduct__r {
+    width: 100%;
+  }
+  .mproduct__row {
+    width: 100%;
+  }
+  .mproduct__tit {
+    font-size: 24px;
+  }
+  .mproduct__subtit {
+    font-size: 16px;
+    br {
+      display: none;
+    }
+  }
+  .peculiarities__heading {
+    margin-bottom: 15px;
+  }
+  .scard-main__tabs {
+    margin-top: 0;
+  }
+  .tab__content-text {
+    font-size: 16px;
+  }
+  .attent__r {    
+            flex-wrap: wrap;
+  }
+  .attent__r .attent__img-w {
+    width: 100%;
+    height: 150px;
+  }
+  .testdrive__title {
+    font-size: 25px;
+  }
+  .reviews__slider .slick-arrow, .reviews__slide {
+    height: 172px;
+  }
+  .person__name {
+    margin-bottom: 8px;
+  }
+  .person__left {
+    
+  }
+  .footer__top {    
+            flex-wrap: wrap;
+            text-align: center;
+  }
+  .footer__col-2,
+  .footer__col-1 {
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: center;
+  }
+  .footer {
+    padding: 25px 0;
+  }
+  .footer__bot-col-1 {
+    display: block;
+    text-align: center;
+  }
+  .bot__inf {
+    width: 100%;
+  }
 }//480
 
 @media only screen and (max-width : 375px) {
-  
+  .top__soc {    
+margin-left: 0;
+margin-right: 7px;            
+height: 24px;
+  }
+  .top__phone {
+    font-size: 18px;
+  }
+.banner__title {
+  font-size: 27px;
 }
+.tabs__list-item {
+  padding: 12px;
+  font-size: 17px;
+}
+.bvideo {
+  padding-bottom: 40px;
+}
+.ctable {
+  padding-top: 40px;
+}
+.production__advant {
+  font-size: 18px;
+}
+.production__info {
+  font-size: 13px;
+}
+.bvideo-2 {
+  padding-bottom: 10px;
+}
+.reviews__h {
+  margin-bottom: 13px;
+}
+.reviews__slider .slick-arrow, .reviews__slide {
+  height: 116px;
+}
+.family__person-2 {
+  margin-top: 0;
+}
+.download-2 {
+  padding: 50px 0;
+}
+.footer__top {
+  margin-bottom: 15px;
+}
+}//375
 
 @media only screen and (max-width : 360px) {
   

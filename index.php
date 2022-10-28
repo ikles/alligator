@@ -1,5 +1,7 @@
 <?php get_header(); ?>
-
+<?php
+$post = get_post(594);
+?>
 <div class="banner" style="background-image: url('<?php echo get_field('banner_bg'); ?>')">
   <div class="contain">
     <div class="banner__row">
@@ -72,7 +74,7 @@ if ( have_posts() ) : // если имеются записи в блоге.
   endwhile;  // завершаем цикл.
 endif;
 /* Сбрасываем настройки цикла. Если ниже по коду будет идти еще один цикл, чтобы не было сбоя. */
-wp_reset_query();                
+wp_reset_query();
 ?>
 </div>
 </div>
@@ -239,7 +241,9 @@ $post = get_post(594);
     <div class="ctable__h heading">
       <span><?php echo get_field('ctable__h'); ?></span>
     </div>
+    <div class="ctable__content">
     <?php echo get_field('ctable__table'); ?>
+    </div>
   </div>
 </div>
 <div class="production">

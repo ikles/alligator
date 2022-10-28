@@ -30,7 +30,7 @@
 	<?php wp_reset_postdata(); ?>
 	<div class="wrapper">
 <?php
-$post = get_post(594);
+$post = get_post(596);
 ?>
 <div class="top">
   <div class="contain">
@@ -44,7 +44,7 @@ $post = get_post(594);
           <a href="#" class="toggle-mnu"><span></span></a>
         </div>
         <div class="top__mnu">
-<span class="open-mnu-close"></span>
+					<span class="open-mnu-close"></span>
           <?php wp_nav_menu('menu=top_menu'); ?>
         </div>
       </div>
@@ -54,8 +54,9 @@ $post = get_post(594);
           <a href="<?php echo get_field('ok'); ?>" class="top__soc"><img src="<? bloginfo('template_url') ?>/img/ok.svg" /></a>
           <a href="<?php echo get_field('youtube'); ?>" class="top__soc"><img src="<? bloginfo('template_url') ?>/img/youtube.svg" /></a>
         </div>
-        <a href="tel:<?php echo get_field('phone'); ?>" class="top__phone"><?php echo get_field('phone'); ?></a>
+        <a href="tel:<?php echo get_field('top_phone'); ?>" class="top__phone"><?php echo get_field('top_phone'); ?></a>
       </div>
     </div>
   </div>
 </div>
+<?php wp_reset_query(); ?>

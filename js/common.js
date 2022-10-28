@@ -51,9 +51,36 @@ $('.reviews__slider').slick({
   autoplaySpeed: 0,  
   arrows: true,
   pauseOnHover: true,  
+  responsive: [
+
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 2        
+      }
+    },
+      {
+      breakpoint: 481,
+      settings: {
+        slidesToShow: 1        
+      }
+    },
+    ]
 });
 
 
+  if( $(window).width() < 641 ) {
+    $(".ctable__content").mCustomScrollbar({
+      axis: "x",
+      theme: "dark-3",
+      mouseWheel: 0,
+    scrollInertia: '230'
+    });    
+  }
+
+  if( $(window).width() > 640 ) {
+    $(".ctable__content").mCustomScrollbar("destroy");
+  }
 
 
 

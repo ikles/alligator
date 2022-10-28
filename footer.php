@@ -44,9 +44,11 @@
 </div><!--wrapper-->
 <div class="overlay"></div>
 <? wp_footer(); ?>
+<link rel="stylesheet" href="<? bloginfo('template_url') ?>/css/jquery.mCustomScrollbar.min.css">
 <script src="<? bloginfo('template_url') ?>/js/jquery-3.4.1.min.js"></script>
 <script src="<? bloginfo('template_url') ?>/js/jquery.fancybox.min.js"></script>
 <script src="<? bloginfo('template_url') ?>/js/slick.js"></script>
+<script src="<? bloginfo('template_url') ?>/js/jquery.mCustomScrollbar.concat.min.js"></script>
 <script src="<? bloginfo('template_url') ?>/js/common.js"></script>
 </body>
 </html>
