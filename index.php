@@ -11,12 +11,19 @@ $post = get_post(594);
         <a href="<?php echo get_field('banner__btn_link'); ?>" class="banner__btn">Скачать</a>
       </div>
       <div class="banner__r">
-        <a href="<?php echo get_field('banner__video'); ?>" class="banner__video">
+        <!-- <a href="<?php echo get_field('banner__video'); ?>" class="banner__video">
           <img src="<?php echo get_field('banner-vid'); ?>" />
-        </a>
+        </a> -->
+
+
+        <div class="banner__video-2">
+          <div class="embed-responsive embed-responsive-16by9">            
+<?php echo get_field('banner__video'); ?>
 
 
 
+          </div>
+        </div>
 
       </div>
     </div>
@@ -242,7 +249,7 @@ $post = get_post(594);
       <span><?php echo get_field('ctable__h'); ?></span>
     </div>
     <div class="ctable__content">
-    <?php echo get_field('ctable__table'); ?>
+      <?php echo get_field('ctable__table'); ?>
     </div>
   </div>
 </div>
@@ -418,20 +425,20 @@ $post = get_post(594);
             </div>
             <div class="person__img">
               <img src="<?php echo get_field('person__img_1'); ?>" /></div>
-          </div>
-          <div class="family__person-2">
+            </div>
+            <div class="family__person-2">
              <div class="person__img">
               <img src="<?php echo get_field('person__img_2'); ?>" /></div>
-            <div class="person__right">
-                 <div class="person__name"><?php echo get_field('person__name_2'); ?></div>
-              <div class="person__func"><?php echo get_field('person__func_2'); ?></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="trust">
+              <div class="person__right">
+               <div class="person__name"><?php echo get_field('person__name_2'); ?></div>
+               <div class="person__func"><?php echo get_field('person__func_2'); ?></div>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+   <div class="trust">
     <div class="contain">
       <div class="trust__h heading">
         <span><?php echo get_field('trust__h'); ?></span>
