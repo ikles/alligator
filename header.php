@@ -35,7 +35,7 @@ $post = get_post(596);
 <div class="top">
   <div class="contain">
     <div class="top__row">
-      <a href="<?php get_home_url() ?>" class="logo">
+      <a href="/" class="logo">
         <img src="<? bloginfo('template_url') ?>/img/logo.svg" class="logo__img" />
         <div class="logo__txt">Производим аэролодки с <b>2010</b> года</div>
       </a>

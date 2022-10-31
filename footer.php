@@ -1,3 +1,7 @@
+<?php
+wp_reset_query(); 
+$post = get_post(839);
+?>
 <div class="footer">
 	<div class="contain">
 		<div class="footer__top">

@@ -14,17 +14,11 @@ $post = get_post(594);
         <!-- <a href="<?php echo get_field('banner__video'); ?>" class="banner__video">
           <img src="<?php echo get_field('banner-vid'); ?>" />
         </a> -->
-
-
         <div class="banner__video-2">
-          <div class="embed-responsive embed-responsive-16by9">            
-<?php echo get_field('banner__video'); ?>
-
-
-
+          <div class="embed-responsive embed-responsive-16by9">          
+            <?php echo get_field('banner__video'); ?>
           </div>
         </div>
-
       </div>
     </div>
   </div>

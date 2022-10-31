@@ -69,6 +69,21 @@ $('.reviews__slider').slick({
 });
 
 
+
+$('.sboat__slider').slick({
+  infinite: true,    
+  speed: 900,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  autoplay: true,    
+  cssEase: 'linear',
+  autoplay: false,
+  autoplaySpeed: 0,  
+  arrows: true,
+  dots: true,
+  pauseOnHover: true, 
+});
+
   if( $(window).width() < 641 ) {
     $(".ctable__content").mCustomScrollbar({
       axis: "x",
