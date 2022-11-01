@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;400;500;600;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="<? bloginfo('template_url') ?>/css/jquery.fancybox.min.css">
-	<link rel="stylesheet" href="<? bloginfo('template_url') ?>/css/slick.css">
+	<link rel="stylesheet" href="<? bloginfo('template_url') ?>/css/slick.css">	
 	<link rel="stylesheet" href="<? bloginfo('template_url') ?>/css/main.css">
 	<!--link rel="icon" type="image/png" href="http://ikles.ru/wp-content/themes/mif/img/icon.png" /-->
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

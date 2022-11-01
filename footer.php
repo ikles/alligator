@@ -53,6 +53,7 @@ $post = get_post(839);
 <script src="<? bloginfo('template_url') ?>/js/jquery.fancybox.min.js"></script>
 <script src="<? bloginfo('template_url') ?>/js/slick.js"></script>
 <script src="<? bloginfo('template_url') ?>/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="<? bloginfo('template_url') ?>/js/jquery.maskedinput.min.js"></script>
 <script src="<? bloginfo('template_url') ?>/js/common.js"></script>
 </body>
 </html>

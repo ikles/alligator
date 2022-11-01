@@ -80,8 +80,9 @@ Template post type: post, page
           </div>        
         <?php endif; ?>
       </div><!--sboat__slider-->
-
-      <a href="<?php echo get_field('sboat_btn'); ?>" class="sboat-change__btn">Выбрать комплектацию</a>
+      <div class="sboat-change__btn-w">
+        <a href="<?php echo get_field('sboat_btn'); ?>" class="sboat-change__btn">Выбрать комплектацию</a>
+      </div>
 
       <div class="bvideo bvideo-3">
         <div class="contain">
@@ -95,30 +96,515 @@ Template post type: post, page
 
       <div class="charact__w rcpadding">
         <div class="charact__col-1">
-          <div class="charact__h lcpadding">Грузоподъёмность</div>
+          <div class="charact__h lcpadding"><?php echo get_field('charact__h_1'); ?></div>
           <div class="charact__contnet lcpadding">            
-            <ul class="charact__ul">
-              <li class="charact__li">Грузоподъёмность аэролодки на глиссере составляет <strong class="charact__li-str">1500 кг</strong></li>
-              <li class="charact__li">
-                Обеспечивается двигателем <strong class="charact__li-str">Honda J35, </strong> мощностью <strong class="charact__li-str">280 л.с.</strong> и объём <strong и="" объём="" class="charact__li-str">3,5 л., </strong><br />
-                либо <strong и="" объёмclass="charact__li-str">Toyota 3UZ,</strong> мощность<strong class="charact__li-str">320 л.с.</strong> <br />
-                и объём<strong class="charact__li-str">2 л. </strong> <br />
-                (двигатель зависит от комплектации аэролодки)
-              </li>
-            </ul>
+            <?php echo get_field('charact__contnet_1'); ?>
           </div>
-
         </div>
         <div class="charact__col-2">
-          <img src="<? bloginfo('template_url') ?>/img/charact-1.jpg" class="charact__img" />
+          <?php if (get_field('charact__video_link_1') != ''): ?>  
+            <a href="<?php echo get_field('charact__video_link_1'); ?>" class="charact__video-link video__has-btn _s80">
+              <img src="<?php echo get_field('charact__img_1'); ?>" class="charact__img" />
+            </a>
+          <?php endif; ?>
+
+          <?php if (get_field('charact__video_link_1') == ''): ?>  
+            <div class="charact__video-link">
+              <img src="<?php echo get_field('charact__img_1'); ?>" class="charact__img" />
+            </div>
+          <?php endif; ?>
         </div>
       </div>
 
 
+      <div class="charact__w rcpadding">
+        <div class="charact__col-1">
+          <div class="charact__h lcpadding"><?php echo get_field('charact__h_2'); ?></div>
+          <div class="charact__contnet lcpadding">            
+            <?php echo get_field('charact__contnet_2'); ?>
+          </div>
+        </div>
+        <div class="charact__col-2">
+          <?php if (get_field('charact__video_link_2') != ''): ?>  
+            <a href="<?php echo get_field('charact__video_link_2'); ?>" class="charact__video-link video__has-btn _s80">
+              <img src="<?php echo get_field('charact__img_2'); ?>" class="charact__img" />
+            </a>
+          <?php endif; ?>
+          <?php if (get_field('charact__video_link_2') == ''): ?>  
+            <a href="<?php echo get_field('charact__img_2'); ?>" class="charact__video-link">
+              <img src="<?php echo get_field('charact__img_2'); ?>" class="charact__img" />
+            </a>
+          <?php endif; ?>
+        </div>
+      </div>
 
 
-    </div><!--sboat__page-->
+      <?php if (get_field('charact__h_3') != ''): ?>
+        <div class="charact__w rcpadding">
+          <div class="charact__col-1">
+            <div class="charact__h lcpadding"><?php echo get_field('charact__h_3'); ?></div>
+            <div class="charact__contnet lcpadding">            
+              <?php echo get_field('charact__contnet_3'); ?>
+            </div>
+          </div>
+          <div class="charact__col-2">
+            <?php if (get_field('charact__video_link_3') != ''): ?>  
+              <a href="<?php echo get_field('charact__video_link_3'); ?>" class="charact__video-link video__has-btn _s80">
+                <img src="<?php echo get_field('charact__img_3'); ?>" class="charact__img" />
+              </a>
+            <?php endif; ?>
+            <?php if (get_field('charact__video_link_3') == ''): ?>  
+              <a href="<?php echo get_field('charact__img_3'); ?>" class="charact__video-link">
+                <img src="<?php echo get_field('charact__img_3'); ?>" class="charact__img" />
+              </a>
+            <?php endif; ?>
+          </div>
+        </div>
+      <?php endif; ?>
 
-  <?php endwhile; ?>
+      <?php if (get_field('charact__h_4') != ''): ?>
+        <div class="charact__w rcpadding">
+          <div class="charact__col-1">
+            <div class="charact__h lcpadding"><?php echo get_field('charact__h_4'); ?></div>
+            <div class="charact__contnet lcpadding">            
+              <?php echo get_field('charact__contnet_4'); ?>
+            </div>
+          </div>
+          <div class="charact__col-2">
+            <?php if (get_field('charact__video_link_4') != ''): ?>  
+              <a href="<?php echo get_field('charact__video_link_4'); ?>" class="charact__video-link video__has-btn _s80">
+                <img src="<?php echo get_field('charact__img_4'); ?>" class="charact__img" />
+              </a>
+            <?php endif; ?>
+            <?php if (get_field('charact__video_link_4') == ''): ?>  
+              <a href="<?php echo get_field('charact__img_4'); ?>" class="charact__video-link">
+                <img src="<?php echo get_field('charact__img_4'); ?>" class="charact__img" />
+              </a>
+            <?php endif; ?>
+          </div>
+        </div>
+      <?php endif; ?>
+
+      <?php if (get_field('charact__h_5') != ''): ?>
+        <div class="charact__w rcpadding">
+          <div class="charact__col-1">
+            <div class="charact__h lcpadding"><?php echo get_field('charact__h_5'); ?></div>
+            <div class="charact__contnet lcpadding">            
+              <?php echo get_field('charact__contnet_5'); ?>
+            </div>
+          </div>
+          <div class="charact__col-2">
+            <?php if (get_field('charact__video_link_5') != ''): ?>  
+              <a href="<?php echo get_field('charact__video_link_5'); ?>" class="charact__video-link video__has-btn _s80">
+                <img src="<?php echo get_field('charact__img_5'); ?>" class="charact__img" />
+              </a>
+            <?php endif; ?>
+            <?php if (get_field('charact__video_link_5') == ''): ?>  
+             <a href="<?php echo get_field('charact__img_5'); ?>" class="charact__video-link">
+              <img src="<?php echo get_field('charact__img_5'); ?>" class="charact__img" />
+            </a>
+          <?php endif; ?>
+        </div>
+      </div>
+    <?php endif; ?>
+
+
+    <div class="consult__btn-w">
+      <a href="<?php echo get_field('consult__btn_2'); ?>" class="consult-2__btn">Консультация по выбору аэролодки</a>
+    </div>
+
+    <div class="view">
+      <div class="contain">
+        <div class="view__cont-w">
+          <div class="view__h heading">
+            <span><?php echo get_field('view__h_1'); ?></span>
+          </div>
+          <div class="view__cont">
+
+            <?php if (get_field('view__photo_1') != ''): ?>
+              <a href="<?php echo get_field('view__photo_1'); ?>" class="view__photo" data-fancybox="gallery-2">
+                <img src="<?php echo get_field('view__photo_1'); ?>" />
+              </a>
+            <?php endif; ?>
+            <?php if (get_field('view__photo_2') != ''): ?>
+              <a href="<?php echo get_field('view__photo_2'); ?>" class="view__photo" data-fancybox="gallery-2">
+                <img src="<?php echo get_field('view__photo_2'); ?>" />
+              </a>
+            <?php endif; ?>
+            <?php if (get_field('view__photo_3') != ''): ?>
+              <a href="<?php echo get_field('view__photo_3'); ?>" class="view__photo" data-fancybox="gallery-2">
+                <img src="<?php echo get_field('view__photo_3'); ?>" />
+              </a>
+            <?php endif; ?>
+            <?php if (get_field('view__photo_4') != ''): ?>
+              <a href="<?php echo get_field('view__photo_4'); ?>" class="view__photo" data-fancybox="gallery-2">
+                <img src="<?php echo get_field('view__photo_4'); ?>" />
+              </a>
+            <?php endif; ?>
+            <?php if (get_field('view__photo_5') != ''): ?>
+              <a href="<?php echo get_field('view__photo_5'); ?>" class="view__photo" data-fancybox="gallery-2">
+                <img src="<?php echo get_field('view__photo_5'); ?>" />
+              </a>
+            <?php endif; ?>
+            <?php if (get_field('view__photo_6') != ''): ?>
+              <a href="<?php echo get_field('view__photo_6'); ?>" class="view__photo" data-fancybox="gallery-2">
+                <img src="<?php echo get_field('view__photo_6'); ?>" />
+              </a>
+            <?php endif; ?>
+            <?php if (get_field('view__photo_7') != ''): ?>
+              <a href="<?php echo get_field('view__photo_7'); ?>" class="view__photo" data-fancybox="gallery-2">
+                <img src="<?php echo get_field('view__photo_7'); ?>" />
+              </a>
+            <?php endif; ?>
+            <?php if (get_field('view__photo_8') != ''): ?>
+              <a href="<?php echo get_field('view__photo_8'); ?>" class="view__photo" data-fancybox="gallery-2">
+                <img src="<?php echo get_field('view__photo_8'); ?>" />
+              </a>
+            <?php endif; ?>
+            <?php if (get_field('view__photo_9') != ''): ?>
+              <a href="<?php echo get_field('view__photo_9'); ?>" class="view__photo" data-fancybox="gallery-2">
+                <img src="<?php echo get_field('view__photo_9'); ?>" />
+              </a>
+            <?php endif; ?>
+            <?php if (get_field('view__photo_10') != ''): ?>
+              <a href="<?php echo get_field('view__photo_10'); ?>" class="view__photo" data-fancybox="gallery-2">
+                <img src="<?php echo get_field('view__photo_10'); ?>" />
+              </a>
+            <?php endif; ?>
+            <?php if (get_field('view__photo_11') != ''): ?>
+              <a href="<?php echo get_field('view__photo_11'); ?>" class="view__photo" data-fancybox="gallery-2">
+                <img src="<?php echo get_field('view__photo_11'); ?>" />
+              </a>
+            <?php endif; ?>
+            <?php if (get_field('view__photo_12') != ''): ?>
+              <a href="<?php echo get_field('view__photo_12'); ?>" class="view__photo" data-fancybox="gallery-2">
+                <img src="<?php echo get_field('view__photo_12'); ?>" />
+              </a>
+            <?php endif; ?>
+            <?php if (get_field('view__photo_13') != ''): ?>
+              <a href="<?php echo get_field('view__photo_13'); ?>" class="view__photo" data-fancybox="gallery-2">
+                <img src="<?php echo get_field('view__photo_13'); ?>" />
+              </a>
+            <?php endif; ?>
+            <?php if (get_field('view__photo_14') != ''): ?>
+              <a href="<?php echo get_field('view__photo_14'); ?>" class="view__photo" data-fancybox="gallery-2">
+                <img src="<?php echo get_field('view__photo_14'); ?>" />
+              </a>
+            <?php endif; ?>
+            <?php if (get_field('view__photo_15') != ''): ?>
+              <a href="<?php echo get_field('view__photo_15'); ?>" class="view__photo" data-fancybox="gallery-2">
+                <img src="<?php echo get_field('view__photo_15'); ?>" />
+              </a>
+            <?php endif; ?>
+            <?php if (get_field('view__photo_16') != ''): ?>
+              <a href="<?php echo get_field('view__photo_16'); ?>" class="view__photo" data-fancybox="gallery-2">
+                <img src="<?php echo get_field('view__photo_16'); ?>" />
+              </a>
+            <?php endif; ?>
+            <?php if (get_field('view__photo_17') != ''): ?>
+              <a href="<?php echo get_field('view__photo_17'); ?>" class="view__photo" data-fancybox="gallery-2">
+                <img src="<?php echo get_field('view__photo_17'); ?>" />
+              </a>
+            <?php endif; ?>
+            <?php if (get_field('view__photo_18') != ''): ?>
+              <a href="<?php echo get_field('view__photo_18'); ?>" class="view__photo" data-fancybox="gallery-2">
+                <img src="<?php echo get_field('view__photo_18'); ?>" />
+              </a>
+            <?php endif; ?>
+            <?php if (get_field('view__photo_19') != ''): ?>
+              <a href="<?php echo get_field('view__photo_19'); ?>" class="view__photo" data-fancybox="gallery-2">
+                <img src="<?php echo get_field('view__photo_19'); ?>" />
+              </a>
+            <?php endif; ?>
+            <?php if (get_field('view__photo_20') != ''): ?>
+              <a href="<?php echo get_field('view__photo_20'); ?>" class="view__photo" data-fancybox="gallery-2">
+                <img src="<?php echo get_field('view__photo_20'); ?>" />
+              </a>
+            <?php endif; ?>
+
+          </div>
+        </div>
+        <div class="view__cont-w">
+          <div class="view__h-2 heading">
+            <span><?php echo get_field('view__h_2'); ?></span>              
+          </div>
+          <div class="view__cont">          
+            <?php if (get_field('view__photo_21') != ''): ?>
+              <a href="<?php echo get_field('view__photo_21'); ?>" class="view__photo" data-fancybox="gallery-2">
+                <img src="<?php echo get_field('view__photo_21'); ?>" />
+              </a>
+            <?php endif; ?>
+            <?php if (get_field('view__photo_22') != ''): ?>
+              <a href="<?php echo get_field('view__photo_22'); ?>" class="view__photo" data-fancybox="gallery-2">
+                <img src="<?php echo get_field('view__photo_22'); ?>" />
+              </a>
+            <?php endif; ?>
+            <?php if (get_field('view__photo_23') != ''): ?>
+              <a href="<?php echo get_field('view__photo_23'); ?>" class="view__photo" data-fancybox="gallery-2">
+                <img src="<?php echo get_field('view__photo_23'); ?>" />
+              </a>
+            <?php endif; ?>
+            <?php if (get_field('view__photo_24') != ''): ?>
+              <a href="<?php echo get_field('view__photo_24'); ?>" class="view__photo" data-fancybox="gallery-2">
+                <img src="<?php echo get_field('view__photo_24'); ?>" />
+              </a>
+            <?php endif; ?>
+            <?php if (get_field('view__photo_25') != ''): ?>
+              <a href="<?php echo get_field('view__photo_25'); ?>" class="view__photo" data-fancybox="gallery-2">
+                <img src="<?php echo get_field('view__photo_25'); ?>" />
+              </a>
+            <?php endif; ?>
+            <?php if (get_field('view__photo_26') != ''): ?>
+              <a href="<?php echo get_field('view__photo_26'); ?>" class="view__photo" data-fancybox="gallery-2">
+                <img src="<?php echo get_field('view__photo_26'); ?>" />
+              </a>
+            <?php endif; ?>
+            <?php if (get_field('view__photo_27') != ''): ?>
+              <a href="<?php echo get_field('view__photo_27'); ?>" class="view__photo" data-fancybox="gallery-2">
+                <img src="<?php echo get_field('view__photo_27'); ?>" />
+              </a>
+            <?php endif; ?>
+            <?php if (get_field('view__photo_28') != ''): ?>
+              <a href="<?php echo get_field('view__photo_28'); ?>" class="view__photo" data-fancybox="gallery-2">
+                <img src="<?php echo get_field('view__photo_28'); ?>" />
+              </a>
+            <?php endif; ?>
+            <?php if (get_field('view__photo_29') != ''): ?>
+              <a href="<?php echo get_field('view__photo_29'); ?>" class="view__photo" data-fancybox="gallery-2">
+                <img src="<?php echo get_field('view__photo_29'); ?>" />
+              </a>
+            <?php endif; ?>
+            <?php if (get_field('view__photo_30') != ''): ?>
+              <a href="<?php echo get_field('view__photo_30'); ?>" class="view__photo" data-fancybox="gallery-2">
+                <img src="<?php echo get_field('view__photo_30'); ?>" />
+              </a>
+            <?php endif; ?>
+            <?php if (get_field('view__photo_31') != ''): ?>
+              <a href="<?php echo get_field('view__photo_31'); ?>" class="view__photo" data-fancybox="gallery-2">
+                <img src="<?php echo get_field('view__photo_31'); ?>" />
+              </a>
+            <?php endif; ?>
+            <?php if (get_field('view__photo_32') != ''): ?>
+              <a href="<?php echo get_field('view__photo_32'); ?>" class="view__photo" data-fancybox="gallery-2">
+                <img src="<?php echo get_field('view__photo_32'); ?>" />
+              </a>
+            <?php endif; ?>
+            <?php if (get_field('view__photo_33') != ''): ?>
+              <a href="<?php echo get_field('view__photo_33'); ?>" class="view__photo" data-fancybox="gallery-2">
+                <img src="<?php echo get_field('view__photo_33'); ?>" />
+              </a>
+            <?php endif; ?>
+            <?php if (get_field('view__photo_34') != ''): ?>
+              <a href="<?php echo get_field('view__photo_34'); ?>" class="view__photo" data-fancybox="gallery-2">
+                <img src="<?php echo get_field('view__photo_34'); ?>" />
+              </a>
+            <?php endif; ?>
+            <?php if (get_field('view__photo_35') != ''): ?>
+              <a href="<?php echo get_field('view__photo_35'); ?>" class="view__photo" data-fancybox="gallery-2">
+                <img src="<?php echo get_field('view__photo_35'); ?>" />
+              </a>
+            <?php endif; ?>
+            <?php if (get_field('view__photo_36') != ''): ?>
+              <a href="<?php echo get_field('view__photo_36'); ?>" class="view__photo" data-fancybox="gallery-2">
+                <img src="<?php echo get_field('view__photo_36'); ?>" />
+              </a>
+            <?php endif; ?>
+            <?php if (get_field('view__photo_37') != ''): ?>
+              <a href="<?php echo get_field('view__photo_37'); ?>" class="view__photo" data-fancybox="gallery-2">
+                <img src="<?php echo get_field('view__photo_37'); ?>" />
+              </a>
+            <?php endif; ?>
+            <?php if (get_field('view__photo_38') != ''): ?>
+              <a href="<?php echo get_field('view__photo_38'); ?>" class="view__photo" data-fancybox="gallery-2">
+                <img src="<?php echo get_field('view__photo_38'); ?>" />
+              </a>
+            <?php endif; ?>
+            <?php if (get_field('view__photo_39') != ''): ?>
+              <a href="<?php echo get_field('view__photo_39'); ?>" class="view__photo" data-fancybox="gallery-2">
+                <img src="<?php echo get_field('view__photo_39'); ?>" />
+              </a>
+            <?php endif; ?>
+            <?php if (get_field('view__photo_40') != ''): ?>
+              <a href="<?php echo get_field('view__photo_40'); ?>" class="view__photo" data-fancybox="gallery-2">
+                <img src="<?php echo get_field('view__photo_40'); ?>" />
+              </a>
+            <?php endif; ?>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review">
+      <div class="contain">
+        <div class="review__h heading">
+          <span><?php echo get_field('review__h'); ?></span>
+        </div>
+        <div class="review__cont">
+
+          <?php if (get_field('review__item_link_1') != ''): ?>
+            <a href="<?php echo get_field('review__item_link_1'); ?>" class="review__item video__has-btn _s80">
+              <img src="<?php echo get_field('review__item_img_1'); ?>" />
+            </a>
+          <?php endif; ?>
+
+          <?php if (get_field('review__item_link_2') != ''): ?>
+            <a href="<?php echo get_field('review__item_link_2'); ?>" class="review__item video__has-btn _s80">
+              <img src="<?php echo get_field('review__item_img_2'); ?>" />
+            </a>
+          <?php endif; ?>
+          <?php if (get_field('review__item_link_3') != ''): ?>
+            <a href="<?php echo get_field('review__item_link_3'); ?>" class="review__item video__has-btn _s80">
+              <img src="<?php echo get_field('review__item_img_3'); ?>" />
+            </a>
+          <?php endif; ?>
+          <?php if (get_field('review__item_link_4') != ''): ?>
+            <a href="<?php echo get_field('review__item_link_4'); ?>" class="review__item video__has-btn _s80">
+              <img src="<?php echo get_field('review__item_img_4'); ?>" />
+            </a>
+          <?php endif; ?>
+          <?php if (get_field('review__item_link_5') != ''): ?>
+            <a href="<?php echo get_field('review__item_link_5'); ?>" class="review__item video__has-btn _s80">
+              <img src="<?php echo get_field('review__item_img_5'); ?>" />
+            </a>
+          <?php endif; ?>
+          <?php if (get_field('review__item_link_6') != ''): ?>
+            <a href="<?php echo get_field('review__item_link_6'); ?>" class="review__item video__has-btn _s80">
+              <img src="<?php echo get_field('review__item_img_6'); ?>" />
+            </a>
+          <?php endif; ?>
+          <?php if (get_field('review__item_link_7') != ''): ?>
+            <a href="<?php echo get_field('review__item_link_7'); ?>" class="review__item video__has-btn _s80">
+              <img src="<?php echo get_field('review__item_img_7'); ?>" />
+            </a>
+          <?php endif; ?>
+          <?php if (get_field('review__item_link_8') != ''): ?>
+            <a href="<?php echo get_field('review__item_link_8'); ?>" class="review__item video__has-btn _s80">
+              <img src="<?php echo get_field('review__item_img_8'); ?>" />
+            </a>
+          <?php endif; ?>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="free">
+      <div class="contain">
+        <div class="free__h"><?php echo get_field('free__h'); ?></div>
+        <div class="free__txt"><?php echo get_field('free__txt'); ?></div>
+        <div class="free__form">
+          <?php echo do_shortcode('[contact-form-7 id="158" title="join-form"]'); ?>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="discount">
+      <div class="contain">
+        <div class="discount__h heading">
+          <span><?php echo get_field('discount__h'); ?></span>
+        </div>
+        <div class="discount__coupon">
+          <?php echo get_field('discount__coupon'); ?>
+
+        </div>
+        <div class="discount__txt-2">
+          <?php echo get_field('discount__txt-2'); ?>
+        </div>
+        <div class="consult__btn-w">
+          <a href="<?php echo get_field('discount__btn'); ?>" class="discount__btn">Получить скидку</a>
+        </div>
+      </div>
+      <img src="<?php echo get_field('discount__airboat_1'); ?>" class="discount__airboat" />
+      <img src="<?php echo get_field('discount__airboat_2'); ?>" class="discount__airboat-2" />      
+    </div>
+
+
+    <div class="equip">
+      <div class="contain">
+        <div class="equip__row">
+        <div class="equip__l">
+          <div class="equip__choice">
+            <a href="#" class="equip__choice-link-act">Характеристики</a>
+            <a href="#" class="equip__choice-link">Комплектация</a>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <td>Наименование</td>
+                <td>Характеристики</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Двигатель</td>
+                <td>Infiniti VQ35</td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr>
+                <td>Грузоподъёмность</td>
+                <td>до 700 кг</td>
+              </tr>
+              <tr>
+                <td>Вместимость салона</td>
+                <td>до 3 человек</td>
+              </tr>
+              <tr>
+                <td>Грузовая площадка</td>
+                <td>1.7 / 1.27 м</td>
+              </tr>
+              <tr>
+                <td>Габариты</td>
+                <td>6.4 / 2.6 / 2.5 м</td>
+              </tr>
+              <tr>
+                <td>Транспортные габариты</td>
+                <td>6.2 / 2.2 / 2.5 м</td>
+              </tr>
+              <tr>
+                <td>Мощность</td>
+                <td>260 л.с.</td>
+              </tr>
+              <tr>
+                <td>Объем двигателя</td>
+                <td>3500 см³</td>
+              </tr>
+              <tr>
+                <td>Максимальная скорость</td>
+                <td>до 100/130 км/ч</td>
+              </tr>
+              <tr>
+                <td>Расход топлива</td>
+                <td>25-50 л/ч</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="equip__r">
+          <div class="equip__r-titl">Аэролодка ALLIGATOR RAPTOR 630</div>
+          <div class="equip__r-row">
+            <div class="equip__r-item">
+              <div class="equip__r-img"><img src="<? bloginfo('template_url') ?>/img/equip-1.svg" /></div>
+              <div class="equip__r-txt-1">Грузоподъёмность</div>
+              <div class="equip__r-txt-2">до 700 кг</div>
+            </div>
+            <div class="equip__r-item">
+              <div class="equip__r-img"><img src="<? bloginfo('template_url') ?>/img/equip-2.svg" /></div>
+              <div class="equip__r-txt-1">Вместимость салона</div>
+              <div class="equip__r-txt-2">до 3 человек</div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div><!--sboat__page-->
+
+<?php endwhile; ?>
 <?php endif; ?>
 <?php get_footer(); ?>

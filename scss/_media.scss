@@ -269,7 +269,6 @@
 }
 .ctable {
   padding-top: 60px;
-}
 table {
 thead {
   td {  
@@ -288,6 +287,7 @@ td {
 }
   
 }  
+}
 }
 
 .production {
@@ -565,7 +565,7 @@ td {
       border-top: 1px solid #ececec;
     }    
   }
-table tbody td:first-child {
+.ctable table tbody td:first-child {
   min-width: 150px;
 }
 .production__advant {

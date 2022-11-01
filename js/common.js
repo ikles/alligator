@@ -98,8 +98,6 @@ $('.sboat__slider').slick({
   }
 
 
-
-
 function tabs(element) {    
   $(element).find('.tabs__list-item').click(function () {
     $(element).find('.tabs__list-item').removeClass('active');
@@ -179,6 +177,34 @@ if($('select').length) {
     baseClass: "myclass"
   });
 
+    $('[data-fancybox="gallery-2"]').fancybox({
+    arrows: true,
+    infobar: true,
+    smallBtn: false,
+    toolbar: true,
+    iframe : {
+      css : {
+        width : '950px'
+      }
+    },    
+    slideClass: "myClass",
+    baseClass: "myclass"
+  });
+
+      $('[data-fancybox="gallery-3"]').fancybox({
+    arrows: true,
+    infobar: true,
+    smallBtn: false,
+    toolbar: true,
+    iframe : {
+      css : {
+        width : '950px'
+      }
+    },    
+    slideClass: "myClass",
+    baseClass: "myclass"
+  });
+
   $(".banner__video").fancybox({
   openEffect  : 'none',
   closeEffect : 'none',
@@ -187,7 +213,7 @@ if($('select').length) {
   }
 });
 
-$(".bvideo__w").fancybox({
+$(".review__item, .bvideo__w, .charact__video-link, .reviews__slide").fancybox({
   openEffect  : 'none',
   closeEffect : 'none',
   helpers : {
@@ -195,13 +221,20 @@ $(".bvideo__w").fancybox({
   }
 });
 
-$(".reviews__slide").fancybox({
-  openEffect  : 'none',
-  closeEffect : 'none',
-  helpers : {
-    media : {}
-  }
-});
+
+$(".phone_input").mask("+7 (999) 999-99-99");
+
+
+$('.charact__w:odd').each(function () {
+  let self = $(this);
+  let charact__h = self.find('.charact__h');
+  let charact__contnet = self.find('.charact__contnet');
+
+  self.removeClass('rcpadding').addClass('lcpadding');
+  charact__h.removeClass('lcpadding').addClass('rcpadding');
+  charact__contnet.removeClass('lcpadding').addClass('rcpadding');
+})
+
   
 
 }); //ready
