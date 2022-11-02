@@ -84,130 +84,130 @@ Template post type: post, page
         <a href="<?php echo get_field('sboat_btn'); ?>" class="sboat-change__btn">Выбрать комплектацию</a>
       </div>
 
-      <div class="bvideo bvideo-3">
-        <div class="contain">
+
+        <div class="bvideo bvideo-3">
           <a href="<?php echo get_field('bvideo__link_3'); ?>" class="bvideo__w">        
             <img src="<?php echo get_field('bvideo__img_3'); ?>" class="bvideo__img" /></a>
           </div>
         </div>
-      </div><!--contain-->
+      
 
 
-
-      <div class="charact__w rcpadding">
-        <div class="charact__col-1">
-          <div class="charact__h lcpadding"><?php echo get_field('charact__h_1'); ?></div>
-          <div class="charact__contnet lcpadding">            
-            <?php echo get_field('charact__contnet_1'); ?>
-          </div>
-        </div>
-        <div class="charact__col-2">
-          <?php if (get_field('charact__video_link_1') != ''): ?>  
-            <a href="<?php echo get_field('charact__video_link_1'); ?>" class="charact__video-link video__has-btn _s80">
-              <img src="<?php echo get_field('charact__img_1'); ?>" class="charact__img" />
-            </a>
-          <?php endif; ?>
-
-          <?php if (get_field('charact__video_link_1') == ''): ?>  
-            <div class="charact__video-link">
-              <img src="<?php echo get_field('charact__img_1'); ?>" class="charact__img" />
-            </div>
-          <?php endif; ?>
-        </div>
-      </div>
-
-
-      <div class="charact__w rcpadding">
-        <div class="charact__col-1">
-          <div class="charact__h lcpadding"><?php echo get_field('charact__h_2'); ?></div>
-          <div class="charact__contnet lcpadding">            
-            <?php echo get_field('charact__contnet_2'); ?>
-          </div>
-        </div>
-        <div class="charact__col-2">
-          <?php if (get_field('charact__video_link_2') != ''): ?>  
-            <a href="<?php echo get_field('charact__video_link_2'); ?>" class="charact__video-link video__has-btn _s80">
-              <img src="<?php echo get_field('charact__img_2'); ?>" class="charact__img" />
-            </a>
-          <?php endif; ?>
-          <?php if (get_field('charact__video_link_2') == ''): ?>  
-            <a href="<?php echo get_field('charact__img_2'); ?>" class="charact__video-link">
-              <img src="<?php echo get_field('charact__img_2'); ?>" class="charact__img" />
-            </a>
-          <?php endif; ?>
-        </div>
-      </div>
-
-
-      <?php if (get_field('charact__h_3') != ''): ?>
+      <div class="charact__w-wrap">
         <div class="charact__w rcpadding">
           <div class="charact__col-1">
-            <div class="charact__h lcpadding"><?php echo get_field('charact__h_3'); ?></div>
+            <div class="charact__h lcpadding"><?php echo get_field('charact__h_1'); ?></div>
             <div class="charact__contnet lcpadding">            
-              <?php echo get_field('charact__contnet_3'); ?>
+              <?php echo get_field('charact__contnet_1'); ?>
             </div>
           </div>
           <div class="charact__col-2">
-            <?php if (get_field('charact__video_link_3') != ''): ?>  
-              <a href="<?php echo get_field('charact__video_link_3'); ?>" class="charact__video-link video__has-btn _s80">
-                <img src="<?php echo get_field('charact__img_3'); ?>" class="charact__img" />
+            <?php if (get_field('charact__video_link_1') != ''): ?>  
+              <a href="<?php echo get_field('charact__video_link_1'); ?>" class="charact__video-link video__has-btn _s80">
+                <img src="<?php echo get_field('charact__img_1'); ?>" class="charact__img" />
               </a>
             <?php endif; ?>
-            <?php if (get_field('charact__video_link_3') == ''): ?>  
-              <a href="<?php echo get_field('charact__img_3'); ?>" class="charact__video-link">
-                <img src="<?php echo get_field('charact__img_3'); ?>" class="charact__img" />
+
+            <?php if (get_field('charact__video_link_1') == ''): ?>  
+              <div class="charact__video-link">
+                <img src="<?php echo get_field('charact__img_1'); ?>" class="charact__img" />
+              </div>
+            <?php endif; ?>
+          </div>
+        </div>
+
+
+        <div class="charact__w rcpadding">
+          <div class="charact__col-1">
+            <div class="charact__h lcpadding"><?php echo get_field('charact__h_2'); ?></div>
+            <div class="charact__contnet lcpadding">            
+              <?php echo get_field('charact__contnet_2'); ?>
+            </div>
+          </div>
+          <div class="charact__col-2">
+            <?php if (get_field('charact__video_link_2') != ''): ?>  
+              <a href="<?php echo get_field('charact__video_link_2'); ?>" class="charact__video-link video__has-btn _s80">
+                <img src="<?php echo get_field('charact__img_2'); ?>" class="charact__img" />
+              </a>
+            <?php endif; ?>
+            <?php if (get_field('charact__video_link_2') == ''): ?>  
+              <a href="<?php echo get_field('charact__img_2'); ?>" class="charact__video-link">
+                <img src="<?php echo get_field('charact__img_2'); ?>" class="charact__img" />
               </a>
             <?php endif; ?>
           </div>
         </div>
-      <?php endif; ?>
 
-      <?php if (get_field('charact__h_4') != ''): ?>
-        <div class="charact__w rcpadding">
-          <div class="charact__col-1">
-            <div class="charact__h lcpadding"><?php echo get_field('charact__h_4'); ?></div>
-            <div class="charact__contnet lcpadding">            
-              <?php echo get_field('charact__contnet_4'); ?>
+
+        <?php if (get_field('charact__h_3') != ''): ?>
+          <div class="charact__w rcpadding">
+            <div class="charact__col-1">
+              <div class="charact__h lcpadding"><?php echo get_field('charact__h_3'); ?></div>
+              <div class="charact__contnet lcpadding">            
+                <?php echo get_field('charact__contnet_3'); ?>
+              </div>
+            </div>
+            <div class="charact__col-2">
+              <?php if (get_field('charact__video_link_3') != ''): ?>  
+                <a href="<?php echo get_field('charact__video_link_3'); ?>" class="charact__video-link video__has-btn _s80">
+                  <img src="<?php echo get_field('charact__img_3'); ?>" class="charact__img" />
+                </a>
+              <?php endif; ?>
+              <?php if (get_field('charact__video_link_3') == ''): ?>  
+                <a href="<?php echo get_field('charact__img_3'); ?>" class="charact__video-link">
+                  <img src="<?php echo get_field('charact__img_3'); ?>" class="charact__img" />
+                </a>
+              <?php endif; ?>
             </div>
           </div>
-          <div class="charact__col-2">
-            <?php if (get_field('charact__video_link_4') != ''): ?>  
-              <a href="<?php echo get_field('charact__video_link_4'); ?>" class="charact__video-link video__has-btn _s80">
-                <img src="<?php echo get_field('charact__img_4'); ?>" class="charact__img" />
-              </a>
-            <?php endif; ?>
-            <?php if (get_field('charact__video_link_4') == ''): ?>  
-              <a href="<?php echo get_field('charact__img_4'); ?>" class="charact__video-link">
-                <img src="<?php echo get_field('charact__img_4'); ?>" class="charact__img" />
-              </a>
-            <?php endif; ?>
-          </div>
-        </div>
-      <?php endif; ?>
+        <?php endif; ?>
 
-      <?php if (get_field('charact__h_5') != ''): ?>
-        <div class="charact__w rcpadding">
-          <div class="charact__col-1">
-            <div class="charact__h lcpadding"><?php echo get_field('charact__h_5'); ?></div>
-            <div class="charact__contnet lcpadding">            
-              <?php echo get_field('charact__contnet_5'); ?>
+        <?php if (get_field('charact__h_4') != ''): ?>
+          <div class="charact__w rcpadding">
+            <div class="charact__col-1">
+              <div class="charact__h lcpadding"><?php echo get_field('charact__h_4'); ?></div>
+              <div class="charact__contnet lcpadding">            
+                <?php echo get_field('charact__contnet_4'); ?>
+              </div>
+            </div>
+            <div class="charact__col-2">
+              <?php if (get_field('charact__video_link_4') != ''): ?>  
+                <a href="<?php echo get_field('charact__video_link_4'); ?>" class="charact__video-link video__has-btn _s80">
+                  <img src="<?php echo get_field('charact__img_4'); ?>" class="charact__img" />
+                </a>
+              <?php endif; ?>
+              <?php if (get_field('charact__video_link_4') == ''): ?>  
+                <a href="<?php echo get_field('charact__img_4'); ?>" class="charact__video-link">
+                  <img src="<?php echo get_field('charact__img_4'); ?>" class="charact__img" />
+                </a>
+              <?php endif; ?>
             </div>
           </div>
-          <div class="charact__col-2">
-            <?php if (get_field('charact__video_link_5') != ''): ?>  
-              <a href="<?php echo get_field('charact__video_link_5'); ?>" class="charact__video-link video__has-btn _s80">
+        <?php endif; ?>    
+
+        <?php if (get_field('charact__h_5') != ''): ?>
+          <div class="charact__w rcpadding">
+            <div class="charact__col-1">
+              <div class="charact__h lcpadding"><?php echo get_field('charact__h_5'); ?></div>
+              <div class="charact__contnet lcpadding">            
+                <?php echo get_field('charact__contnet_5'); ?>
+              </div>
+            </div>
+            <div class="charact__col-2">
+              <?php if (get_field('charact__video_link_5') != ''): ?>  
+                <a href="<?php echo get_field('charact__video_link_5'); ?>" class="charact__video-link video__has-btn _s80">
+                  <img src="<?php echo get_field('charact__img_5'); ?>" class="charact__img" />
+                </a>
+              <?php endif; ?>
+              <?php if (get_field('charact__video_link_5') == ''): ?>  
+               <a href="<?php echo get_field('charact__img_5'); ?>" class="charact__video-link">
                 <img src="<?php echo get_field('charact__img_5'); ?>" class="charact__img" />
               </a>
             <?php endif; ?>
-            <?php if (get_field('charact__video_link_5') == ''): ?>  
-             <a href="<?php echo get_field('charact__img_5'); ?>" class="charact__video-link">
-              <img src="<?php echo get_field('charact__img_5'); ?>" class="charact__img" />
-            </a>
-          <?php endif; ?>
+          </div>
         </div>
-      </div>
-    <?php endif; ?>
-
+      <?php endif; ?>
+    </div>
 
     <div class="consult__btn-w">
       <a href="<?php echo get_field('consult__btn_2'); ?>" class="consult-2__btn">Консультация по выбору аэролодки</a>
@@ -524,87 +524,41 @@ Template post type: post, page
     <div class="equip">
       <div class="contain">
         <div class="equip__row">
-        <div class="equip__l">
-          <div class="equip__choice">
-            <a href="#" class="equip__choice-link-act">Характеристики</a>
-            <a href="#" class="equip__choice-link">Комплектация</a>
-          </div>
-          <table>
-            <thead>
-              <tr>
-                <td>Наименование</td>
-                <td>Характеристики</td>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Двигатель</td>
-                <td>Infiniti VQ35</td>
-              </tr>
-            </tbody>
-            <tbody>
-              <tr>
-                <td>Грузоподъёмность</td>
-                <td>до 700 кг</td>
-              </tr>
-              <tr>
-                <td>Вместимость салона</td>
-                <td>до 3 человек</td>
-              </tr>
-              <tr>
-                <td>Грузовая площадка</td>
-                <td>1.7 / 1.27 м</td>
-              </tr>
-              <tr>
-                <td>Габариты</td>
-                <td>6.4 / 2.6 / 2.5 м</td>
-              </tr>
-              <tr>
-                <td>Транспортные габариты</td>
-                <td>6.2 / 2.2 / 2.5 м</td>
-              </tr>
-              <tr>
-                <td>Мощность</td>
-                <td>260 л.с.</td>
-              </tr>
-              <tr>
-                <td>Объем двигателя</td>
-                <td>3500 см³</td>
-              </tr>
-              <tr>
-                <td>Максимальная скорость</td>
-                <td>до 100/130 км/ч</td>
-              </tr>
-              <tr>
-                <td>Расход топлива</td>
-                <td>25-50 л/ч</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="equip__r">
-          <div class="equip__r-titl">Аэролодка ALLIGATOR RAPTOR 630</div>
-          <div class="equip__r-row">
-            <div class="equip__r-item">
-              <div class="equip__r-img"><img src="<? bloginfo('template_url') ?>/img/equip-1.svg" /></div>
-              <div class="equip__r-txt-1">Грузоподъёмность</div>
-              <div class="equip__r-txt-2">до 700 кг</div>
+          <div class="equip__l">
+            <div class="equip__choice">
+              <a href="#" class="equip__choice-link-act"><?php echo get_field('equip__choice_1'); ?></a>
+              <a href="#" class="equip__choice-link"><?php echo get_field('equip__choice_2'); ?></a>
             </div>
-            <div class="equip__r-item">
-              <div class="equip__r-img"><img src="<? bloginfo('template_url') ?>/img/equip-2.svg" /></div>
-              <div class="equip__r-txt-1">Вместимость салона</div>
-              <div class="equip__r-txt-2">до 3 человек</div>
+            <div class="equip__table-w">
+              <?php echo get_field('equip__table'); ?>
             </div>
           </div>
-        </div>
+          <div class="equip__r">
+            <div class="equip__r-titl">
+              <?php echo get_field('equip__r_tit'); ?>
+            </div>
+            <div class="equip__r-row">
+              <div class="equip__r-item">
+                <div class="equip__r-img">
+                  <img src="<? bloginfo('template_url') ?>/img/equip-1.svg" /></div>
+                  <div class="equip__r-txt-1">Грузоподъёмность</div>
+                  <div class="equip__r-txt-2"><?php echo get_field('equip__r_txt_1'); ?></div>
+                </div>
+                <div class="equip__r-item">
+                  <div class="equip__r-img"><img src="<? bloginfo('template_url') ?>/img/equip-2.svg" /></div>
+                  <div class="equip__r-txt-1">Вместимость салона</div>
+                  <div class="equip__r-txt-2"><?php echo get_field('equip__r_txt_2'); ?></div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
 
 
 
-  </div><!--sboat__page-->
+    </div><!--sboat__page-->
 
-<?php endwhile; ?>
+  <?php endwhile; ?>
 <?php endif; ?>
 <?php get_footer(); ?>

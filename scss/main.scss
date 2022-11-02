@@ -127,7 +127,7 @@ body {
     padding-left: calc((100vw - 530px)/2);
     padding-right: calc((100vw - 530px)/2);
   }
-  @media only screen and (max-width : 570px) {
+  @media only screen and (max-width : 575px) {
     padding-left: 15px;
     padding-right: 15px;
   }
@@ -765,7 +765,8 @@ body {
   position: relative;
   display: flex;  
   align-items: center;
-  justify-content: center;
+  justify-content: center;  
+        
 }
 
 .bvideo-2 {
@@ -779,6 +780,9 @@ body {
 }
 
 .bvideo__w {
+    border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 5px 5px 10px rgba(62, 62, 62, 0.25);
   width: 100%;
   display: flex;
   position: relative;
@@ -800,6 +804,7 @@ body {
 
 .bvideo__img {
   max-width: 100%;
+  width: 100%;
 }
 
 .testdrive {
@@ -1598,6 +1603,11 @@ body {
     display: flex;    
     justify-content: center;
     z-index: 12;
+
+  left: 0;
+  display: flex;
+          justify-content: center;
+
     li {
       cursor: pointer;
       font-size: 0;
@@ -1891,13 +1901,18 @@ body {
 }
 
 .review__item {    
-  border-radius: 10px;
-  width: 570px;
+  border-radius: 10px;  
+  width: calc(50% - 13px);
   height: 300px;
   overflow: hidden;
   margin-bottom: 26px;
   position: relative;
   box-shadow: 5px 5px 10px rgba(62, 62, 62, 0.25);
+  img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
   &:after {
     content: "";
     display: block;
@@ -2005,6 +2020,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  z-index: 4;
   ul {
     display: flex;
     li {
