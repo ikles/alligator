@@ -11,10 +11,8 @@ Template post type: post, page
   <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
     <div class="sboat__h1"><span><?php the_title() ?></span></div>
     <div class="contain">
-
+      <?php the_content(); ?>
       <div class="sboat__slider">
-
-
         <?php 
         print_r(get_field('sboat__slide_1'))
         ?>
@@ -79,17 +77,25 @@ Template post type: post, page
             <img src="<?php echo get_field('sboat__slide_12') ?>" alt="">
           </div>        
         <?php endif; ?>
-      </div><!--sboat__slider-->
-      <div class="sboat-change__btn-w">
-        <a href="<?php echo get_field('sboat_btn'); ?>" class="sboat-change__btn">Выбрать комплектацию</a>
-      </div>
+      </div><!--sboat__slider-->      
 
-
-        <div class="bvideo bvideo-3">
-          <a href="<?php echo get_field('bvideo__link_3'); ?>" class="bvideo__w">        
-            <img src="<?php echo get_field('bvideo__img_3'); ?>" class="bvideo__img" /></a>
-          </div>
+      <?php if (get_field('sboat_btn') != ''): ?>
+        <div class="sboat-change__btn-w">
+          <a href="<?php echo get_field('sboat_btn'); ?>" class="sboat-change__btn">Выбрать комплектацию</a>
         </div>
+      <?php endif; ?>
+
+      <?php if (get_field('sboat_vid_t') != ''): ?>
+        <div class="sboat__h heading">
+          <span><?php echo get_field('sboat_vid_t'); ?></span>
+        </div>
+      <?php endif; ?>
+
+      <div class="bvideo bvideo-3">
+        <a href="<?php echo get_field('bvideo__link_3'); ?>" class="bvideo__w">        
+          <img src="<?php echo get_field('bvideo__img_3'); ?>" class="bvideo__img" /></a>
+        </div>
+      </div>
       
 
 
@@ -210,7 +216,7 @@ Template post type: post, page
     </div>
 
     <div class="consult__btn-w">
-      <a href="<?php echo get_field('consult__btn_2'); ?>" class="consult-2__btn">Консультация по выбору аэролодки</a>
+      <a href="<?php echo get_field('consult__btn_2'); ?>" class="consult-2__btn">Узнать о лодке подробнее</a>
     </div>
 
     <div class="view">
@@ -220,7 +226,6 @@ Template post type: post, page
             <span><?php echo get_field('view__h_1'); ?></span>
           </div>
           <div class="view__cont">
-
             <?php if (get_field('view__photo_1') != ''): ?>
               <a href="<?php echo get_field('view__photo_1'); ?>" class="view__photo" data-fancybox="gallery-2">
                 <img src="<?php echo get_field('view__photo_1'); ?>" />
@@ -321,9 +326,16 @@ Template post type: post, page
                 <img src="<?php echo get_field('view__photo_20'); ?>" />
               </a>
             <?php endif; ?>
-
           </div>
         </div>
+
+
+        <?php if (get_field('sel_btn_2') != ''): ?>
+          <div class="sel__btn-w">
+            <a href="<?php echo get_field('sel_btn_2'); ?>" class="consult-2__btn"><?php echo get_field('sel_btn_txt_1'); ?></a>
+          </div>
+        <?php endif; ?>
+
         <div class="view__cont-w">
           <div class="view__h-2 heading">
             <span><?php echo get_field('view__h_2'); ?></span>              
@@ -431,6 +443,14 @@ Template post type: post, page
             <?php endif; ?>
           </div>
         </div>
+
+
+       <?php if (get_field('sel_btn_3') != ''): ?>
+          <div class="sel__btn-w">
+            <a href="<?php echo get_field('sel_btn_3'); ?>" class="consult-2__btn"><?php echo get_field('sel_btn_txt_2'); ?></a>
+          </div>
+        <?php endif; ?>
+
       </div>
     </div>
 

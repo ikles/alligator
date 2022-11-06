@@ -774,9 +774,14 @@ body {
   padding-top: 40px;
 }
 .bvideo-3 {
-  margin-top: 40px;
+  margin-top: 25px;
   margin-bottom: 100px;
   padding-bottom: 0;
+  .bvideo__w {    
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .bvideo__w {
@@ -804,7 +809,7 @@ body {
 
 .bvideo__img {
   max-width: 100%;
-  width: 100%;
+  width: 100%;   
 }
 
 .testdrive {
@@ -1592,10 +1597,20 @@ body {
   }
 }
 
+.sboat__h {
+  span {
+    &:before {
+      right: -5px;
+      bottom: -5px;
+    }  
+  }
+  margin-bottom: 0px;
+}
+
 .sboat__slider {
-  margin-top: 48px;
+  margin-top: 30px;
   padding: 0 50px;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
   .slick-dots {
     position: absolute;
     bottom: 20px;
@@ -1652,6 +1667,10 @@ body {
     background: #3E3E3E url(../img/arr-yell-l.svg) no-repeat center;
   }
 } 
+
+.sboat__page {
+  margin-top: 8px;
+}
 
 .sboat__slider .slick-list,
 .sboat__slider .slick-slider,
@@ -1855,6 +1874,7 @@ body {
     height: 100%;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));    
     transition: 0.5s;
+    display: none;
   } 
   &:hover {
     &:before {
@@ -2150,7 +2170,11 @@ body {
 
 
 
-
+.sel__btn-w {
+  margin-top: -20px;
+  text-align: center;
+  margin-bottom: 40px;
+}
 
 
 
@@ -2158,6 +2182,7 @@ body {
 
 .equip__r {
   padding-top: 67px;
+  display: none;
 }
 
 .equip__r-titl {

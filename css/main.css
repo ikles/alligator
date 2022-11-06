@@ -1078,9 +1078,13 @@ body {
   padding-top: 40px; }
 
 .bvideo-3 {
-  margin-top: 40px;
+  margin-top: 25px;
   margin-bottom: 100px;
   padding-bottom: 0; }
+  .bvideo-3 .bvideo__w {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto; }
 
 .bvideo__w {
   -webkit-border-radius: 10px;
@@ -1879,10 +1883,16 @@ body {
           -ms-transform: rotate(50.41deg) translate(0%, -50%);
               transform: rotate(50.41deg) translate(0%, -50%); }
 
+.sboat__h {
+  margin-bottom: 0px; }
+  .sboat__h span:before {
+    right: -5px;
+    bottom: -5px; }
+
 .sboat__slider {
-  margin-top: 48px;
+  margin-top: 30px;
   padding: 0 50px;
-  margin-bottom: 40px; }
+  margin-bottom: 50px; }
   .sboat__slider .slick-dots {
     position: absolute;
     bottom: 20px;
@@ -1937,6 +1947,9 @@ body {
     font-size: 0;
     bottom: 0px;
     background: #3E3E3E url(../img/arr-yell-l.svg) no-repeat center; }
+
+.sboat__page {
+  margin-top: 8px; }
 
 .sboat__slider .slick-list,
 .sboat__slider .slick-slider,
@@ -2130,7 +2143,8 @@ body {
     background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
     -webkit-transition: 0.5s;
-    transition: 0.5s; }
+    transition: 0.5s;
+    display: none; }
   .view__photo:hover:before {
     opacity: 0; }
   .view__photo img {
@@ -2394,8 +2408,14 @@ body {
     padding-top: 14px;
     padding-bottom: 13px; }
 
+.sel__btn-w {
+  margin-top: -20px;
+  text-align: center;
+  margin-bottom: 40px; }
+
 .equip__r {
-  padding-top: 67px; }
+  padding-top: 67px;
+  display: none; }
 
 .equip__r-titl {
   font-weight: 700;
@@ -3512,7 +3532,9 @@ body {
   .discount {
     padding-top: 30px; }
   .free {
-    padding-bottom: 10px; } }
+    padding-bottom: 10px; }
+  .heading {
+    font-size: 26px; } }
 
 @media only screen and (max-width: 320px) {
   body, body > * {
